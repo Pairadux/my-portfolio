@@ -13,7 +13,7 @@
                 A computer science major passionate about technology, programming, and language learning, with a focus on web development, command-line tools, and digital organization. Want to learn more? Check out my
                 <span>
                     <a
-                        class="italic text-blue-500"
+                        class="italic underline text-blue-500"
                         href="/about">about page</a
                     ></span
                 >.

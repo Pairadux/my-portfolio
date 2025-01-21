@@ -14,7 +14,7 @@
                 A few of my most recent projects. Want to see more? Head over to my
                 <span
                     ><a
-                        class="text-blue-500"
+                        class="underline italic text-blue-500"
                         href="/projects">projects page</a
                     ></span
                 >.

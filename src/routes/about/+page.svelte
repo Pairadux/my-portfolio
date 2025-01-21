@@ -114,7 +114,7 @@
             Feel free to reach out if you'd like to collaborate, chat about
             tech, or <a
                 href="https://www.youtube.com/watch?v=jabH3wRwiWQ"
-                class="italic text-blue-500"
+                class="underline italic text-blue-500"
                 >discuss the political and economic state of the world right
                 now.</a>
             Let's build something amazing together!

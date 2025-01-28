@@ -9,14 +9,12 @@
             The Amazing World of <strike class="decoration-4 decoration-red-500">Gumball</strike> Austin
         </h2>
         <p>
-            Greetings, earthlings &#128406! I'm Austin, a Computer Science major
-            with a minor in Math at Valdosta State University. I'm a network
-            student assistant, freelance web developer, and a full-time student
-            with a passion for programming, web development, Linux, and
-            command-line applications. Whether it's building responsive
-            websites, crafting efficient CLI tools, or exploring the intricacies
-            of the Linux ecosystem, I'm always eager to dive into new challenges
-            and expand my skill set.
+            Greetings, earthlings &#128406! I'm Austin, a Computer Science major,
+            network student assistant, and freelance web developer at Valdosta 
+            State University. Some of my passions include programming, web development,
+            Linux, and command-line applications. Whether it's building responsive websites,
+            crafting efficient CLI tools, or exploring the intricacies of the Linux ecosystem,
+            I'm always eager to dive into new challenges and expand my skill set.
         </p>
 
         <p>

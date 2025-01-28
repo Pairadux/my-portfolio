@@ -7,6 +7,7 @@ import Javascript from "$lib/skills/Javascript.svelte";
 import Linux from "$lib/skills/Linux.svelte";
 import Python from "$lib/skills/Python.svelte";
 import Rust from "$lib/skills/Rust.svelte";
+import C from "$lib/skills/C.svelte";
 import Svelte from "$lib/skills/Svelte.svelte";
 import Tailwind from "$lib/skills/Tailwind.svelte";
 
@@ -75,9 +76,9 @@ export const skills: skill[] = [
         component: Python,
     },
     {
-        icon: "rust.svg",
-        name: "Rust",
+        icon: "c.svg",
+        name: "C",
         description: "",
-        component: Rust,
+        component: C,
     },
 ];

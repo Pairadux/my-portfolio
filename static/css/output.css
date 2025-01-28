@@ -444,14 +444,6 @@ video {
   display: none;
 }
 
-.font-outline-2 {
-  text-shadow:
-            -2px -2px 0 #000,
-            2px -2px 0 #000,
-            -2px 2px 0 #000,
-            2px 2px 0 #000;
-}
-
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -1725,23 +1717,9 @@ video {
   fill: #3b82f6;
 }
 
-.fill-\[\#000000\] {
-  fill: #000000;
-}
-
-.object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
-}
-
 .object-cover {
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.object-fill {
-  -o-object-fit: fill;
-     object-fit: fill;
 }
 
 .p-2 {
@@ -1964,11 +1942,6 @@ video {
 .ring-blue-500 {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(59 130 246 / var(--tw-ring-opacity));
-}
-
-.blur {
-  --tw-blur: blur(8px);
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .brightness-50 {

@@ -5,7 +5,7 @@
 </script>
 
 <li class="group flex h-12 w-12 items-center justify-center ring-2 ring-blue-500 hover:bg-blue-500">
-    <a href={item.link}>
+    <a target="_blank" href={item.link}>
         <svg
             class="h-8 w-8"
             xmlns="http://www.w3.org/2000/svg"

@@ -12,6 +12,9 @@
         <p class="font-bold text-red-500">NOTE:<br />THIS IS AN AI GENERATED, VERY ROUGH, "DRAFT"<br />The vast majority of this is probably not true or is overly exaggerated!<br>I just haven't had the time to write out the project details yet :)</p>
         <hr />
 
+        <h2>Project Link</h2>
+        <a target="_blank" href="https://bestfriendsdogrescue.net/">bestfriendsdogrescue.net</a>
+
         <h2>Project Overview</h2>
         <p>Best Friend's Dog Rescue is a website built to support a local dog rescue initiative. The site provides information about the rescue's mission, showcases adoptable dogs, and offers ways for visitors to get involved, whether by adopting, fostering, or donating. Despite some challenges, the end result is a user-friendly platform that meets the needs of the rescue and effectively promotes its cause.</p>
 

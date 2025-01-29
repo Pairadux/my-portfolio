@@ -12,6 +12,9 @@
         <p class="font-bold text-red-500">NOTE:<br />THIS IS AN AI GENERATED, VERY ROUGH, "DRAFT"<br />The vast majority of this is probably not true or is overly exaggerated!<br>I just haven't had the time to write out the project details yet :)</p>
         <hr />
 
+        <h2>Project Link</h2>
+        <a target="_blank" href="https://www.dirtybeachcleans.com">www.dirtybeachcleans.com</a>
+
         <h2>Project Overview</h2>
         <p>Dirty Beach Cleans is a single-page website dedicated to raising awareness about beach pollution and encouraging community participation in beach clean-up efforts. Built with plain HTML and Tailwind CSS, this site provides essential information, action steps, and visual content to inspire viewers to contribute to cleaner beaches.</p>
 

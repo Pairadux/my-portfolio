@@ -40,12 +40,12 @@
             href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
             rel="stylesheet" />
         
-		<link rel="modulepreload" href="/_app/immutable/entry/start.n3pm3IzX.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/BTkilKUb.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/start.DFGuDilW.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/BmGu5vb6.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/CPS0V-jq.js">
-		<link rel="modulepreload" href="/_app/immutable/chunks/B-eauCNL.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/CIbITfzC.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/CYgJF_JY.js">
-		<link rel="modulepreload" href="/_app/immutable/entry/app.BauoTZtB.js">
+		<link rel="modulepreload" href="/_app/immutable/entry/app.DOk8j5Mf.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/C1FmrZbK.js">
 		<link rel="modulepreload" href="/_app/immutable/chunks/e9ovTqM9.js">
     </head>
@@ -55,15 +55,15 @@
         <div style="display: contents">
 			<script>
 				{
-					__sveltekit_1m4nwqn = {
+					__sveltekit_bqkudt = {
 						base: ""
 					};
 
 					const element = document.currentScript.parentElement;
 
 					Promise.all([
-						import("/_app/immutable/entry/start.n3pm3IzX.js"),
-						import("/_app/immutable/entry/app.BauoTZtB.js")
+						import("/_app/immutable/entry/start.DFGuDilW.js"),
+						import("/_app/immutable/entry/app.DOk8j5Mf.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element);
 					});

@@ -3,7 +3,7 @@
     import Footer from "$lib/footer/Footer.svelte";
       import { darkMode } from "$lib/libStore"
 
-    import DevelopmentPopup from "$lib/popups/DevelopmentPopup.svelte";
+    import DevelopmentPopup from "$lib/DevelopmentPopup.svelte";
 </script>
 
 <div class="bg-blue-500 p-3 md:p-6 transition-colors { $darkMode ? 'dark' : '' }">

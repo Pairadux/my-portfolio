@@ -1,6 +1,6 @@
 <script lang="ts">
     import Header from "$lib/header/Header.svelte";
-    import Footer from "$lib/footer/Footer.svelte";
+    import Footer from "$lib/Footer.svelte";
       import { darkMode } from "$lib/libStore"
 
     import DevelopmentPopup from "$lib/DevelopmentPopup.svelte";

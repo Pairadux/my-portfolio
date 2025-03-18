@@ -16,9 +16,9 @@ export const projects: projectItem[] = [
     },
     {
         image: "command-line-apps.jpg",
-        title: "TaskCrab*",
-        description: "A Rust based TUI todolist application with vim-like keybinds.",
-        href: "taskcrab",
+        title: "GoTM*",
+        description: "A go based TUI todolist application with vim-like keybinds.",
+        href: "gotm",
         featured: true
     },
     {

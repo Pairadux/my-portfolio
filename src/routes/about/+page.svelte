@@ -3,10 +3,15 @@
     import ProseArticle from "$lib/general/ProseArticle.svelte";
 </script>
 
+<svelte:head>
+    <title>Austin Gause | About</title>
+    <meta name="description" content="The Amazing World of Austin" />
+</svelte:head>
+
 <section class="mb-16">
     <ProseArticle>
         <h2>
-            The Amazing World of <strike class="decoration-4 decoration-red-500">Gumball</strike> Austin
+            The Amazing World of <span aria-hidden="true" data-nosnippet><strike class="decoration-4 decoration-red-500">Gumball</strike></span> Austin
         </h2>
         <p>
             Greetings, earthlings &#128406! I'm Austin, a Computer Science major,

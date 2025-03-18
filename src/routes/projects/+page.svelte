@@ -4,6 +4,11 @@
     import SectionHeader from "$lib/general/SectionHeader.svelte";
 </script>
 
+<svelte:head>
+    <title>Austin Gause | Projects</title>
+    <meta name="description" content="A comprehensive list of all my projects." />
+</svelte:head>
+
 <!-- PORTFOLIO SECTION -->
 <section class="m-auto flex flex-col items-center">
     <!-- TITLE -->

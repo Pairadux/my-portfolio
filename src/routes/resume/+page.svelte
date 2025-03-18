@@ -2,6 +2,11 @@
     import ProseArticle from "$lib/general/ProseArticle.svelte";
 </script>
 
+<svelte:head>
+    <title>Austin Gause | Resume</title>
+    <meta name="description" content="A junior Computer Science student with a passion for web design and CLI applications." />
+</svelte:head>
+
 <section class="mb-16 flex">
     <ProseArticle>
         <!-- SUMMARY -->

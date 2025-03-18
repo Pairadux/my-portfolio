@@ -8,6 +8,11 @@
     import Cta from "./components/CTA.svelte";
 </script>
 
+<svelte:head>
+    <title>Austin Gause | CS Major & UNIX Enthusiast</title>
+    <meta name="description" content="A computer science major passionate about technology, programming, and language learning, with a focus on web development, command-line tools, and digital organization." />
+</svelte:head>
+
 <!-- MAIN CONTAINER -->
 <div class="w-full">
     <div class="container m-auto flex flex-col items-center">

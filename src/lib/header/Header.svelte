@@ -59,28 +59,21 @@
                         src={`${assets}/images/brand-logo/pairadux-logo.svg`}
                         alt=""
                         class="h-32 w-32 rounded-full bg-blue-500" />
-                    <ul class="flex flex-col items-center justify-center gap-16">
+                    <div class="flex flex-col items-center justify-center gap-16">
                         {#each navItems as item}
-                            <button
-                                type="button"
-                                on:click={toggleMobileNav}
-                                ><NavItem
-                                    classes="text-3xl"
-                                    href={item.href}
-                                    label={item.label} /></button>
+                            <button type="button" on:click={toggleMobileNav} >
+                                <NavItem classes="text-3xl" href={item.href} label={item.label} />
+                            </button>
                         {/each}
-                    </ul>
+                    </div>
                     <ThemeToggleButton />
                 </div>
             {:else}
-                <ul class="container hidden flex-row items-center justify-around gap-8 md:flex">
+                <div class="container flex flex-row items-center justify-around gap-8">
                     {#each navItems as item}
-                        <NavItem
-                            classes=""
-                            href={item.href}
-                            label={item.label} />
+                        <NavItem classes="" href={item.href} label={item.label} />
                     {/each}
-                </ul>
+                </div>
                 <ThemeToggleButton />
             {/if}
         </nav>

@@ -7,8 +7,4 @@
     $: isActive = href === "/" ? $page.url.pathname === href : $page.url.pathname.startsWith(href);
 </script>
 
-<li>
-    <a
-        class="text-xl font-normal decoration-2 hover:underline dark:text-white {classes} {isActive ? 'underline' : ''}"
-        {href}>{label}</a>
-</li>
+<a class="text-xl font-normal decoration-2 hover:underline dark:text-white {classes} {isActive ? 'underline' : ''}" {href}>{label}</a>

@@ -10,3 +10,4 @@ vite.config.ts.timestamp-*
 .vscode
 /build
 temp
+/static/css/output.css

@@ -13,6 +13,9 @@
         <h2>
             The Amazing World of <span aria-hidden="true" data-nosnippet><strike class="decoration-4 decoration-red-500">Gumball</strike></span> Austin
         </h2>
+        <hr />
+        <p class="font-bold text-red-500">NOTE:<br />THIS IS A ROUGH DRAFT<br />The vast majority of this is subject to change!<br />Though the primary details are completely true.<br />I just haven't had the time to write out the project details yet :)</p>
+        <hr />
         <p>
             Greetings, earthlings &#128406! I'm Austin, a Computer Science major,
             network student assistant, and freelance web developer at Valdosta 

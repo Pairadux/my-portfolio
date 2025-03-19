@@ -4,12 +4,12 @@ import { SvelteComponent } from 'svelte';
 
 const modules = import.meta.glob<{
     default: typeof SvelteComponent;
-}>("$lib/data/projects/*.svelte");
+}>("$lib/projects/*.svelte");
 
 export const load: PageLoad = async ({ params }) => {
     const { slug } = params;
 
-    const path = `/src/lib/data/projects/${slug}.svelte`;
+    const path = `/src/lib/projects/${slug}.svelte`;
 
     const importer = modules[path];
     if (!importer) {

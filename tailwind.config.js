@@ -8,6 +8,9 @@ export default {
                 black: "#0f172a",
                 white: "#f1f5f9",
             },
+            fontFamily: {
+                sans: ['"Atkinson Hyperlegible"', 'sans-serif'],
+            },
         },
     },
     plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],

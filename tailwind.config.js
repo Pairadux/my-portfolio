@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    darkMode: 'selector',
+    darkMode: "selector",
     content: ["./src/**/*.{html,js,ts,svelte}"],
     theme: {
         extend: {
@@ -10,5 +10,5 @@ export default {
             },
         },
     },
-    plugins: [require("@tailwindcss/typography")],
+    plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };

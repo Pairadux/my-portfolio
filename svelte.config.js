@@ -6,9 +6,7 @@ const config = {
     preprocess: vitePreprocess(),
 
     kit: {
-        adapter: adapter({
-            fallback: "404.svelte",
-        }),
+        adapter: adapter({ }),
         //paths: {
         //    base: process.argv.includes("dev") ? "" : "",
         //},

@@ -9,7 +9,7 @@ export default {
                 white: "#f1f5f9",
             },
             fontFamily: {
-                sans: ['"Atkinson Hyperlegible"', 'sans-serif'],
+                sans: ['"Atkinson Hyperlegible"', "ui-sans-serif", "system-ui", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
             },
         },
     },

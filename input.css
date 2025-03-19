@@ -14,16 +14,9 @@
 /*     color: #171717; */
 /* } */
 
-/* 
-    Potential Fonts:
-    - Salsa
-    - Rubik Mono One
-    - Jetbrains Mono
-*/
-
 .heading-font {
     font-family: "Fira Code", monospace !important;
-    font-optical-sizing: auto; /* SPECIFIC TO JETBRAINS MONO FONT */
+    font-optical-sizing: auto;
     font-weight: 700 !important; 
     font-style: normal !important;
 }

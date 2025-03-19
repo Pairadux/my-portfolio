@@ -3,7 +3,7 @@
     import Hero from "./components/Hero.svelte";
     // import Greeting from "./components/Greeting.svelte";
     import SkillsContainer from "./components/SkillsContainer.svelte";
-    import Projects from "./components/Projects.svelte";
+    import FeaturedProjects from "./components/FeaturedProjects.svelte";
     import Testimonials from "./components/Testimonials.svelte";
     import Cta from "./components/CTA.svelte";
 </script>
@@ -20,12 +20,11 @@
 
         <hr class="my-16 h-px w-3/4 border-[1.5px] border-dashed border-black dark:border-white" />
 
-        <!-- <Greeting /> -->
         <SkillsContainer />
 
         <hr class="my-16 h-px w-3/4 border-[1.5px] border-dashed border-black dark:border-white" />
 
-        <Projects />
+        <FeaturedProjects />
     </div>
 
     <Cta />

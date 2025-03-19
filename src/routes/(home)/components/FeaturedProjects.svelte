@@ -1,7 +1,7 @@
 <script lang="ts">
     import { projectCatalog } from "$lib/data/projectCatalog";
-    import ProjectItem from "$lib/general/ProjectItem.svelte";
-    import SectionHeader from "$lib/general/SectionHeader.svelte";
+    import ProjectItem from "$lib/ProjectItem.svelte";
+    import SectionHeader from "$lib/SectionHeader.svelte";
 </script>
 
 <!-- PORTFOLIO SECTION -->

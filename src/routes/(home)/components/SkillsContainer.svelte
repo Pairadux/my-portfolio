@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SectionHeader from "$lib/general/SectionHeader.svelte";
+    import SectionHeader from "$lib/SectionHeader.svelte";
     import type { ComponentType } from "svelte";
     import Apple from "$lib/skills/Apple.svelte";
     import Html from "$lib/skills/Html.svelte";

@@ -1,6 +1,6 @@
 <script lang="ts">
-    import ProseArticle from "$lib/general/ProseArticle.svelte";
-    import Haiku from "$lib/general/Haiku.svelte";
+    import ProseArticle from "$lib/ProseArticle.svelte";
+    import Haiku from "$lib/Haiku.svelte";
     // TODO: pull haikus from a list or file
 </script>
 

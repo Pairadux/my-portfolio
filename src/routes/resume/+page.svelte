@@ -1,5 +1,5 @@
 <script lang="ts">
-    import ProseArticle from "$lib/general/ProseArticle.svelte";
+    import ProseArticle from "$lib/ProseArticle.svelte";
 </script>
 
 <svelte:head>

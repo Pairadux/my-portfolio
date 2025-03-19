@@ -1,8 +1,8 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { assets } from "$app/paths";
-    import NavItem from "$lib/header/NavItem.svelte";
-    import ThemeToggleButton from "$lib/general/ThemeToggleButton.svelte";
+    import NavItem from "./NavItem.svelte";
+    import ThemeToggleButton from "./ThemeToggleButton.svelte";
 
     // Responsive Viewport Check
     let isMobile = false;

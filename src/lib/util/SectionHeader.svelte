@@ -1,6 +1,6 @@
-<h2 class="dark:text-white heading-font mb-2 text-center text-2xl md:text-3xl">
+<h2 class="heading-font mb-2 text-center text-2xl text-black md:text-3xl dark:text-white">
     <slot name="header" />
 </h2>
-<p class="text-center px-2 dark:text-white text-lg md:text-xl">
+<p class="px-2 text-center text-lg text-black md:text-xl dark:text-white">
     <slot name="subheader" />
 </p>

@@ -22,9 +22,9 @@
 */
 
 .heading-font {
-    font-family: "JetBrains Mono", monospace !important;
+    font-family: "Fira Code", monospace !important;
     font-optical-sizing: auto; /* SPECIFIC TO JETBRAINS MONO FONT */
-    font-weight: 800 !important; 
+    font-weight: 700 !important; 
     font-style: normal !important;
 }
 

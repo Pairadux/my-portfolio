@@ -121,6 +121,7 @@
             tech, or <a
                 href="https://www.youtube.com/watch?v=jabH3wRwiWQ"
                 class="underline italic text-blue-500"
+                target="_blank"
                 >discuss the political and economic state of the world right
                 now.</a>
             Let's build something amazing together!

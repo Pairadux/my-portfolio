@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SectionHeader from "$lib/SectionHeader.svelte";
+    import SectionHeader from "$lib/util/SectionHeader.svelte";
     import { assets } from "$app/paths";
 </script>
 

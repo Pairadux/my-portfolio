@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { SvelteComponent } from "svelte";
     import type { Project } from "$lib/data/projectCatalog";
-    import ProseArticle from "$lib/ProseArticle.svelte";
+    import ProseArticle from "$lib/util/ProseArticle.svelte";
 
     export let data: { component: typeof SvelteComponent; project: Project };
 

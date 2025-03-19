@@ -1,6 +1,6 @@
 <script lang="ts">
     import { assets } from "$app/paths";
-    import ProseArticle from "$lib/ProseArticle.svelte";
+    import ProseArticle from "$lib/util/ProseArticle.svelte";
 </script>
 
 <svelte:head>

@@ -11,7 +11,7 @@
 
 <!-- PORTFOLIO SECTION -->
 <section class="m-auto flex flex-col items-center">
-    <!-- TITLE -->
+    <!-- Section Header -->
     <SectionHeader>
         <svelte:fragment slot="header">Projects</svelte:fragment>
         <svelte:fragment slot="subheader">A comprehensive list of all of my projects.</svelte:fragment>

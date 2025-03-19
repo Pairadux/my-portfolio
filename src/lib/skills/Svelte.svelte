@@ -1,6 +1,6 @@
 <svg
-    class="h-full w-full fill-black dark:fill-white"
-    fill="none"
+    class="h-full w-full"
+    fill="#ff3e00"
     height="15"
     viewBox="0 0 15 15"
     width="15"

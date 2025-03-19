@@ -11,13 +11,12 @@
         <SectionHeader>
             <svelte:fragment slot="header">Recent Projects</svelte:fragment>
             <svelte:fragment slot="subheader">
-                A few of my most recent projects. Want to see more? Head over to my
+                A few of my most recent projects. Want to see more? Check out my
                 <span
                     ><a
-                        class="underline italic text-blue-500"
-                        href="/projects">projects page</a
-                    ></span
-                >.
+                        class="italic text-blue-500 underline"
+                        href="/projects">projects</a
+                    ></span> page.
             </svelte:fragment>
         </SectionHeader>
     </div>

@@ -3,7 +3,6 @@
     import { assets } from "$app/paths";
 </script>
 
-<!-- INTRODUCTION SECTION -->
 <section class="flex flex-col-reverse items-center justify-center gap-16 lg:flex-row">
     <div class="w-4/5 lg:w-2/5">
         <SectionHeader>
@@ -25,5 +24,4 @@
         src="{assets}/images/headshot/senior_photo_headshot_blue_bg.jpg"
         class="z-10 h-80 w-80 rounded-full"
         alt="" />
-    <!-- <MorphingBlob /> -->
 </section>

@@ -7,10 +7,10 @@
 		"build": "vite build",
 		"deploy": "npm run minify && npm run build && gh-pages -d build --cname austingause.com --nojekyll",
 		"preview": "vite preview",
-		"minify": "npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --minify",
+		"minify": "npx tailwindcss -i ./input.css -o ./static/css/output.css --minify",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"watch": "npx tailwindcss -i ./static/css/input.css -o ./static/css/output.css --watch"
+		"watch": "npx tailwindcss -i ./input.css -o ./static/css/output.css --watch"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",

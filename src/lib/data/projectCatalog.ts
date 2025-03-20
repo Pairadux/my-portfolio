@@ -10,21 +10,21 @@ export const projectCatalog: Project[] = [
     {
         image: "portfolio-site.jpg",
         title: "Portfolio Site",
-        description: "A modern, responsive portfolio showcasing my skills, projects, and experience in web development.",
+        description: "A modern, responsive portfolio showcasing my skills, projects, and experiences.",
         slug: "portfolio-site",
         featured: true
     },
     {
         image: "command-line-apps.jpg",
         title: "GoTM - Go Task Manager",
-        description: "A go based TUI todolist application with vim-like keybinds.",
+        description: "A Go-based TUI/CLI task manager with Vim-style keys, SQLite support, and robust concurrency.",
         slug: "gotm",
         featured: true
     },
     {
         image: "cross-platform-app.jpg",
         title: "Wails Flashcard App",
-        description: "A full-featured, spaced-repitition flashcard app built with Wails.",
+        description: "A Wails & Svelte flashcard app featuring Anki-style spaced repetition.",
         slug: "wails-flashcard-app",
         featured: true
     },

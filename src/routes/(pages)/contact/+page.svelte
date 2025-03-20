@@ -13,7 +13,10 @@
     <ProseArticle>
         <h2 class="text-center">Thanks for taking the time to reach out.<br />How can I help?</h2>
         <hr />
-        <form class="not-prose">
+        <form
+            class="not-prose"
+            action="https://formspree.io/f/mkgjjwnw"
+            method="POST">
             <div class="border-b border-gray-300 pb-12 dark:border-gray-600">
                 <div class="space-y-12">
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">

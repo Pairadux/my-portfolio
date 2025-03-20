@@ -18,16 +18,16 @@
     }
 
     const skills: skill[] = [
-        { name: "HTML5", component: Html, },
-        { name: "JavaScript", component: Javascript, },
-        { name: "Svelte", component: Svelte, },
-        { name: "TailwindCSS", component: Tailwind, },
-        { name: "Linux", component: Linux, },
-        { name: "Apple", component: Apple, },
-        { name: "Java", component: Java, },
-        { name: "Python", component: Python, },
-        { name: "C", component: C, },
-        { name: "Go", component: Go, },
+        { name: "HTML5", component: Html },
+        { name: "JavaScript", component: Javascript },
+        { name: "Svelte", component: Svelte },
+        { name: "TailwindCSS", component: Tailwind },
+        { name: "Linux", component: Linux },
+        { name: "Apple", component: Apple },
+        { name: "Java", component: Java },
+        { name: "Python", component: Python },
+        { name: "C", component: C },
+        { name: "Go", component: Go },
     ];
 </script>
 
@@ -41,7 +41,7 @@
         {#each skills as skill}
             <div class="tooltip h-12 w-12 md:h-14 md:w-14">
                 <svelte:component this={skill.component} />
-                <span class="tooltiptext bg-black text-white after:border-b-transparent after:border-l-transparent after:border-r-transparent after:border-t-black dark:after:border-t-white dark:bg-white dark:text-black">{skill.name}</span>
+                <span class="tooltiptext bg-black text-white after:border-b-transparent after:border-l-transparent after:border-r-transparent after:border-t-black dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
             </div>
         {/each}
     </div>

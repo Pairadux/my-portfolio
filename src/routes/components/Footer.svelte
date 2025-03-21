@@ -25,5 +25,6 @@
         </ul>
 
         <h4 class="text-black dark:text-white">Made with <strike class="decoration-red-500 decoration-4">love</strike> crayons &#169; 2024</h4>
+        <p class="text-black dark:text-white">.- -.-. --.&nbsp;&nbsp;.-.. --- ...- . ...&nbsp;&nbsp;-.- .-. -...</p>
     </div>
 </footer>

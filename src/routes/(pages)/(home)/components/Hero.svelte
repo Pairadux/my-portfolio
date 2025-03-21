@@ -9,10 +9,10 @@
             <svelte:fragment slot="header">Hi, I'm <span class="text-blue-500">Austin</span> &#128075</svelte:fragment>
 
             <svelte:fragment slot="subheader">
-                A computer science major passionate about technology, programming, and language learning, with a focus on web development, command-line tools, and digital organization. Want to learn more? Check out my
+                A computer science major with a passion for technology, programming, and language learning. Recently, my focus has shifted to working with UNIX/Linux systems and command line tools. Want to learn more? Check out my
                 <span>
                     <a
-                        class="italic underline text-blue-500"
+                        class="italic text-blue-500 underline"
                         href="/about">about page</a
                     ></span
                 >.

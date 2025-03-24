@@ -1,5 +1,12 @@
 <script lang="ts">
     import { assets } from "$app/paths";
+    import { createEventDispatcher } from "svelte";
+    
+    const dispatch = createEventDispatcher();
+
+    function onProceedClick() {
+        dispatch("proceed");
+    }
 </script>
 
 <dialog
@@ -19,8 +26,9 @@
                 class="italic text-blue-500 underline">roadmap</a
             >.
         </p>
-        <form method="dialog">
+        <form class="flex flex-col" method="dialog">
             <button class="mt-2 rounded-lg bg-black p-2 text-white dark:bg-white dark:text-black">Proceed</button>
+            <button on:click={onProceedClick} class="mt-2 rounded-lg p-2 text-blac dark:text-white">Don't Show Again</button>
         </form>
     </div>
 </dialog>

@@ -8,7 +8,6 @@
 
 <button
     type="button"
-    class="md:ml-8"
     on:click={darkModeToggle}>
     {#if $darkMode}
         <svg

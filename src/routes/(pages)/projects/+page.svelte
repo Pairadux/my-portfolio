@@ -1,7 +1,10 @@
 <script lang="ts">
-    import { projectCatalog } from "$lib/data/projectCatalog";
     import ProjectItem from "$lib/util/ProjectItem.svelte";
     import SectionHeader from "$lib/util/SectionHeader.svelte";
+    import type { PageData } from './$types';
+
+    export let data: PageData;
+    $: projects = data.projects;
 </script>
 
 <svelte:head>
@@ -19,7 +22,7 @@
 
     <!-- PORTFOLIO ITEMS CONTAINER -->
     <div class="mb-16 mt-8 flex flex-col gap-8 lg:grid lg:grid-cols-3">
-        {#each projectCatalog as project}
+        {#each projects as project}
             <ProjectItem
                 title={project.title}
                 description={project.description}

@@ -10,9 +10,12 @@
 		"minify": "npx tailwindcss -i ./input.css -o ./static/css/output.css --minify",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"watch": "npx tailwindcss -i ./input.css -o ./static/css/output.css --watch"
+		"watch": "npx tailwindcss -i ./input.css -o ./static/css/output.css --watch",
+		"sanity": "sanity dev --port 3333",
+		"sanity:deploy": "sanity deploy"
 	},
 	"devDependencies": {
+		"@sanity/vision": "^4.10.2",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-static": "^3.0.1",
 		"@sveltejs/kit": "^2.0.0",
@@ -25,6 +28,7 @@
 		"prettier": "^3.2.5",
 		"prettier-plugin-svelte": "^3.2.1",
 		"prettier-plugin-tailwindcss": "^0.5.11",
+		"sanity": "^4.10.2",
 		"svelte": "^4.2.7",
 		"svelte-check": "^3.6.0",
 		"tailwindcss": "^3.4.1",
@@ -32,5 +36,9 @@
 		"typescript": "^5.0.0",
 		"vite": "^5.0.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@sanity/client": "^7.12.0",
+		"@sanity/image-url": "^1.2.0"
+	}
 }

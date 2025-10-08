@@ -1,34 +1,13 @@
 <script lang="ts">
     import SectionHeader from "$lib/util/SectionHeader.svelte";
-    import type { ComponentType } from "svelte";
-    import Apple from "$lib/skills/Apple.svelte";
-    import Html from "$lib/skills/Html.svelte";
-    import Java from "$lib/skills/Java.svelte";
-    import Javascript from "$lib/skills/Javascript.svelte";
-    import Linux from "$lib/skills/Linux.svelte";
-    import Python from "$lib/skills/Python.svelte";
-    import C from "$lib/skills/C.svelte";
-    import Svelte from "$lib/skills/Svelte.svelte";
-    import Tailwind from "$lib/skills/Tailwind.svelte";
-    import Go from "$lib/skills/Go.svelte";
 
-    interface skill {
+    export let skills: Array<{
+        _id: string;
         name: string;
-        component: ComponentType;
-    }
-
-    const skills: skill[] = [
-        { name: "HTML5", component: Html },
-        { name: "JavaScript", component: Javascript },
-        { name: "Svelte", component: Svelte },
-        { name: "TailwindCSS", component: Tailwind },
-        { name: "Linux", component: Linux },
-        { name: "Apple", component: Apple },
-        { name: "Java", component: Java },
-        { name: "Python", component: Python },
-        { name: "C", component: C },
-        { name: "Go", component: Go },
-    ];
+        iconLight: string;
+        iconDark?: string;
+        order: number;
+    }> = [];
 </script>
 
 <div class="relative md:block">
@@ -38,12 +17,27 @@
     </SectionHeader>
 
     <div class="mt-8 grid grid-cols-5 gap-4 lg:flex">
-        {#each skills as skill}
-            <div class="tooltip h-12 w-12 md:h-14 md:w-14">
-                <svelte:component this={skill.component} />
-                <span class="tooltiptext bg-black text-white after:border-b-transparent after:border-l-transparent after:border-r-transparent after:border-t-black dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
-            </div>
-        {/each}
+        {#if skills.length > 0}
+            {#each skills as skill}
+                <div class="tooltip h-12 w-12 md:h-14 md:w-14">
+                    <!-- Light mode icon -->
+                    <img
+                        src={skill.iconLight}
+                        alt={skill.name}
+                        class="h-full w-full object-contain dark:hidden"
+                    />
+                    <!-- Dark mode icon (or fallback to light icon) -->
+                    <img
+                        src={skill.iconDark || skill.iconLight}
+                        alt={skill.name}
+                        class="hidden h-full w-full object-contain dark:block"
+                    />
+                    <span class="tooltiptext bg-black text-white after:border-b-transparent after:border-l-transparent after:border-r-transparent after:border-t-black dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
+                </div>
+            {/each}
+        {:else}
+            <p class="col-span-5 text-center text-gray-500">No skills added yet. Add some in Sanity Studio!</p>
+        {/if}
     </div>
 </div>
 

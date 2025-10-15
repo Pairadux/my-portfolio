@@ -10,6 +10,8 @@
         order: number;
     }> = [];
 
+    const currentYear = new Date().getFullYear();
+
     // Use Sanity social links if available, otherwise fall back to just GitHub
     $: displaySocialLinks = socialLinks.length > 0 ? socialLinks : [{
         _id: 'fallback-github',
@@ -44,7 +46,7 @@
             {/each}
         </ul>
 
-        <h4 class="text-black dark:text-white">Made with <strike class="decoration-red-500 decoration-4">love</strike> crayons &#169; 2024</h4>
+        <h4 class="text-black dark:text-white">Made with <strike class="decoration-red-500 decoration-4">love</strike> crayons &#169; 2024 - {currentYear}</h4>
         <p class="text-black dark:text-white">.- -.-. --.&nbsp;&nbsp;.-.. --- ...- . ...&nbsp;&nbsp;-.- .-. -...</p>
     </div>
 </footer>

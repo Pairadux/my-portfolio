@@ -1,7 +1,6 @@
 <script lang="ts">
-    import { assets } from "$app/paths";
     import ProseArticle from "$lib/util/ProseArticle.svelte";
-    import type { PageData } from './$types';
+    import type { PageData } from "./$types";
 
     export let data: PageData;
     const { aboutPage } = data;
@@ -21,27 +20,47 @@
     <ProseArticle>
         {#if hasContent}
             <h2>{aboutPage.pageTitle}</h2>
+
+            <hr />
+            <p class="font-bold text-red-500">NOTE:<br />THIS IS A ROUGH DRAFT<br />The vast majority of this is subject to change!<br />Though the primary details are completely true.<br />I just haven't had the time to write out the details yet :)</p>
             <hr />
 
             {#each aboutPage.sections as section}
-                {#if section._type === 'textSection'}
+                {#if section._type === "textSection"}
                     <p>{section.content}</p>
-                {:else if section._type === 'imageSection'}
+                {:else if section._type === "imageSection"}
                     <figure>
                         <img
                             src={section.image}
-                            alt={section.alt || ''} />
+                            alt={section.alt || ""} />
                         {#if section.caption}
                             <figcaption>{section.caption}</figcaption>
                         {/if}
                     </figure>
                 {/if}
             {/each}
+
+            <p>
+                Feel free to <a
+                    href="/contact"
+                    class="italic text-blue-500 underline">reach out</a>
+                if you'd like to collaborate, chat about tech, or
+                <a
+                    href="https://www.youtube.com/watch?v=jabH3wRwiWQ"
+                    class="italic text-blue-500 underline"
+                    target="_blank">discuss the political and economic state of the world right now.</a>
+                Let's build something amazing together!
+            </p>
         {:else}
             <h2>The Amazing World of Austin</h2>
             <hr />
             <p class="font-bold text-yellow-600">Note: About page content is not yet set up in Sanity. Please add content in the Sanity Studio.</p>
-            <p>Visit <a href="http://localhost:3333" class="text-blue-500 underline" target="_blank">Sanity Studio</a> to add your about page content.</p>
+            <p>
+                Visit <a
+                    href="http://localhost:3333"
+                    class="text-blue-500 underline"
+                    target="_blank">Sanity Studio</a> to add your about page content.
+            </p>
         {/if}
     </ProseArticle>
 </section>

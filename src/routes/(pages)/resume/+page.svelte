@@ -92,7 +92,15 @@
         {/if}
         {:else}
             <h3 class="text-center dark:text-white">Resume</h3>
-            <p class="text-yellow-600 font-bold">Resume content not yet configured in Sanity. Please add your resume information in the Sanity Studio.</p>
+            <p class="italic text-black/60 dark:text-white/60 text-center mb-8">
+                My resume is currently downloading from the cloud... the very slow, very dramatic cloud.
+                In the meantime, know that I'm definitely qualified for things.
+            </p>
+            <div class="space-y-6">
+                <div class="h-16 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse"></div>
+                <div class="h-32 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 150ms"></div>
+                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 300ms"></div>
+            </div>
         {/if}
     </ProseArticle>
 </section>

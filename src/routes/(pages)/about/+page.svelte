@@ -52,15 +52,16 @@
                 Let's build something amazing together!
             </p>
         {:else}
-            <h2>The Amazing World of Austin</h2>
+            <h2>About</h2>
             <hr />
-            <p class="font-bold text-yellow-600">Note: About page content is not yet set up in Sanity. Please add content in the Sanity Studio.</p>
-            <p>
-                Visit <a
-                    href="http://localhost:3333"
-                    class="text-blue-500 underline"
-                    target="_blank">Sanity Studio</a> to add your about page content.
+            <p class="italic text-black/60 dark:text-white/60">
+                Content currently loading... Probably something fascinating about technology, programming, and maybe a hobby or two.
             </p>
+            <div class="mt-8 space-y-4">
+                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse"></div>
+                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 150ms"></div>
+                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 300ms"></div>
+            </div>
         {/if}
     </ProseArticle>
 </section>

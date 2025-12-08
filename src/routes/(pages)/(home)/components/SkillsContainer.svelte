@@ -36,7 +36,13 @@
                 </div>
             {/each}
         {:else}
-            <p class="col-span-5 text-center text-gray-500">No skills added yet. Add some in Sanity Studio!</p>
+            <div class="col-span-5 flex gap-4 justify-center">
+                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse"></div>
+                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 100ms"></div>
+                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 200ms"></div>
+                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 300ms"></div>
+                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 400ms"></div>
+            </div>
         {/if}
     </div>
 </div>

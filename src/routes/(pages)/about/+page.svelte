@@ -1,75 +1,67 @@
 <script lang="ts">
-    import { assets } from "$app/paths";
     import ProseArticle from "$lib/util/ProseArticle.svelte";
+    import type { PageData } from "./$types";
+
+    export let data: PageData;
+    const { aboutPage } = data;
+
+    // Check if we have Sanity content or need to show fallback
+    $: hasContent = aboutPage && aboutPage.sections && aboutPage.sections.length > 0;
 </script>
 
 <svelte:head>
     <title>Austin Gause | About</title>
     <meta
         name="description"
-        content="The Amazing World of Austin" />
+        content={aboutPage?.pageTitle || "The Amazing World of Austin"} />
 </svelte:head>
 
 <section class="mb-16">
     <ProseArticle>
-        <h2>
-            The Amazing World of <span
-                aria-hidden="true"
-                data-nosnippet><strike class="decoration-red-500 decoration-4">Gumball</strike></span> Austin
-        </h2>
-        <hr />
-        <p class="font-bold text-red-500">NOTE:<br />THIS IS A ROUGH DRAFT<br />The vast majority of this is subject to change!<br />Though the primary details are completely true.<br />I just haven't had the time to write out the details yet :)</p>
-        <hr />
-        <p>Greetings, earthlings &#128406! I'm Austin, a Computer Science major, network student assistant, and freelance web developer at Valdosta State University. Some of my passions include programming, web development, Linux, and command-line applications. Whether it's building responsive websites, crafting efficient CLI tools, or exploring the intricacies of the Linux ecosystem, I'm always eager to dive into new challenges and expand my skill set.</p>
+        {#if hasContent}
+            <h2>{aboutPage.pageTitle}</h2>
 
-        <p>However, my journey into technology began long before I ever wrote a line of code. Even as a child, I was captivated by the mechanics of everyday devices and how they operated. Around the age of 10, I started taking apart electronics, driven by a curiosity to understand what made them "tick." This fascination with technology and problem-solving laid the foundation for my career today. While I spent some time as a flooring installer, learning the value of precision and hard work, my passion for tech has always been at the core of my personal and professional growth. Now, I channel that same curiosity and attention to detail into programming, web development, and exploring the command line.</p>
+            <hr />
+            <p class="font-bold text-red-500">NOTE:<br />THIS IS A ROUGH DRAFT<br />The vast majority of this is subject to change!<br />Though the primary details are completely true.<br />I just haven't had the time to write out the details yet :)</p>
+            <hr />
 
-        <figure>
-            <img
-                src="{assets}/images/about/people-renovating-house-concept.jpg"
-                alt="From Flooring to Coding" />
-            <figcaption>From Flooring to Coding: Building Foundations</figcaption>
-        </figure>
+            {#each aboutPage.sections as section}
+                {#if section._type === "textSection"}
+                    <p>{section.content}</p>
+                {:else if section._type === "imageSection"}
+                    <figure>
+                        <img
+                            src={section.image}
+                            alt={section.alt || ""} />
+                        {#if section.caption}
+                            <figcaption>{section.caption}</figcaption>
+                        {/if}
+                    </figure>
+                {/if}
+            {/each}
 
-        <p>My interest in programming began during high school when I first attempted to write code in Python. Despite my enthusiasm, I struggled to grasp many concepts due to the lack of formal teaching. I spent countless hours on YouTube tutorials, managing to build small apps and simple scripts but never quite feeling confident. It wasn’t until the summer before my freshman year that I decided to dive into web development, teaching myself the basics to gain a "head start." However, it was in my CS 1010 class during freshman year that everything truly clicked. With structured guidance and formal instruction, programming finally started to make sense, propelling me into exploring languages like Java and Rust, as well as web development frameworks like Svelte and Tailwind CSS. Today, as a freelance web developer and Network Student Assistant, I continue to expand my skills, delving into both development and networking fundamentals.</p>
-
-        <figure>
-            <img
-                src="{assets}/images/about/html-css-collage-concept-with-person.jpg"
-                alt="Deep in Code" />
-            <figcaption>Lost in Lines of Code</figcaption>
-        </figure>
-
-        <p>Beyond the screen, I'm drawn to exploring a variety of interests. I have a genuine love for foreign languages and cultures, along with a deep appreciation for TV, music, gaming, and reading. Building computers has also become an interesting, hands-on hobby, letting me combine my technical skills with my craftsmanship. Gaming, especially, is a big passion, and it often fuels my curiosity and excitement for exploring new tech.</p>
-
-        <figure>
-            <img
-                src="{assets}/images/about/gaming.jpg"
-                alt="Immersed in Gaming" />
-            <figcaption>Immersed in Gaming</figcaption>
-        </figure>
-
-        <p>I’m also active on campus as a member of the Association of Computing Machinery (ACM), where I previously served as Treasurer. I regularly attend on-campus events and occasionally volunteer on campus. Volunteering has given me the chance to connect with others and contribute to a supportive community.</p>
-
-        <figure>
-            <img
-                src="{assets}/images/about/different-people-doing-volunteer-work-with-food.jpg"
-                alt="ACM Volunteering" />
-            <figcaption>Community First: Volunteering on Campus</figcaption>
-        </figure>
-
-        <p>When I'm not coding or studying, you might find me experimenting with new CLI applications, working on personal projects, or researching emerging technologies. I'm always eager to tackle new challenges, collaborate on exciting projects, and continue growing both personally and professionally.</p>
-
-        <p>
-            Feel free to <a
-                href="/contact"
-                class="italic text-blue-500 underline">reach out</a>
-            if you'd like to collaborate, chat about tech, or
-            <a
-                href="https://www.youtube.com/watch?v=jabH3wRwiWQ"
-                class="italic text-blue-500 underline"
-                target="_blank">discuss the political and economic state of the world right now.</a>
-            Let's build something amazing together!
-        </p>
+            <p>
+                Feel free to <a
+                    href="/contact"
+                    class="italic text-blue-500 underline">reach out</a>
+                if you'd like to collaborate, chat about tech, or
+                <a
+                    href="https://www.youtube.com/watch?v=jabH3wRwiWQ"
+                    class="italic text-blue-500 underline"
+                    target="_blank">discuss the political and economic state of the world right now.</a>
+                Let's build something amazing together!
+            </p>
+        {:else}
+            <h2>About</h2>
+            <hr />
+            <p class="italic text-black/60 dark:text-white/60">
+                Content currently loading... Probably something fascinating about technology, programming, and maybe a hobby or two.
+            </p>
+            <div class="mt-8 space-y-4">
+                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse"></div>
+                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 150ms"></div>
+                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 300ms"></div>
+            </div>
+        {/if}
     </ProseArticle>
 </section>

@@ -1,7 +1,15 @@
 <script lang="ts">
-    import { projectCatalog } from "$lib/data/projectCatalog";
     import ProjectItem from "$lib/util/ProjectItem.svelte";
     import SectionHeader from "$lib/util/SectionHeader.svelte";
+
+    export let projects: Array<{
+        _id: string;
+        title: string;
+        description: string;
+        slug: string;
+        image?: string;
+        featured: boolean;
+    }> = [];
 </script>
 
 <!-- PORTFOLIO SECTION -->
@@ -23,14 +31,26 @@
 
     <!-- PORTFOLIO ITEMS CONTAINER -->
     <div class="mt-8 flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
-        {#each projectCatalog as project}
-            {#if project.featured}
+        {#if projects.length > 0}
+            {#each projects as project}
                 <ProjectItem
                     title={project.title}
                     description={project.description}
                     image={project.image}
                     slug={project.slug} />
-            {/if}
-        {/each}
+            {/each}
+        {:else}
+            <div class="col-span-3 text-center">
+                <p class="italic text-black/60 dark:text-white/60 mb-8">
+                    Projects loading... They're really impressive, I promise. Like, award-winning impressive.
+                    (Disclaimer: Awards may be self-awarded)
+                </p>
+                <div class="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
+                    <div class="h-72 w-72 mx-auto bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse"></div>
+                    <div class="h-72 w-72 mx-auto bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 150ms"></div>
+                    <div class="h-72 w-72 mx-auto bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 300ms"></div>
+                </div>
+            </div>
+        {/if}
     </div>
 </section>

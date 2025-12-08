@@ -3,6 +3,9 @@
     import SkillsContainer from "./components/SkillsContainer.svelte";
     import FeaturedProjects from "./components/FeaturedProjects.svelte";
     import Testimonials from "./components/Testimonials.svelte";
+    import type { PageData } from './$types';
+
+    export let data: PageData;
 </script>
 
 <svelte:head>
@@ -14,15 +17,15 @@
 
 <div class="w-full">
     <div class="container m-auto flex flex-col items-center">
-        <Hero />
+        <Hero hero={data.hero} />
 
         <hr class="my-16 h-px w-3/4 border-[1.5px] border-dashed border-black dark:border-white" />
 
-        <SkillsContainer />
+        <SkillsContainer skills={data.skills} />
 
         <hr class="my-16 h-px w-3/4 border-[1.5px] border-dashed border-black dark:border-white" />
 
-        <FeaturedProjects />
+        <FeaturedProjects projects={data.featuredProjects} />
     </div>
 
     <!-- CTA -->
@@ -36,6 +39,6 @@
     </section>
 
     <div class="container m-auto flex flex-col items-center">
-        <Testimonials />
+        <Testimonials testimonials={data.testimonials} />
     </div>
 </div>

@@ -5,6 +5,9 @@
     import DevelopmentPopup from "./components/DevelopmentPopup.svelte";
     import Header from "./components/header/Header.svelte";
     import Footer from "./components/Footer.svelte";
+    import type { LayoutData } from './$types';
+
+    export let data: LayoutData;
 
     let showDevPopup = false;
 
@@ -32,6 +35,6 @@
             <Header />
             <slot />
         </div>
-        <Footer />
+        <Footer socialLinks={data.socialLinks} />
     </div>
 </div>

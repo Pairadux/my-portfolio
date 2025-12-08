@@ -148,3 +148,17 @@ export async function getResume() {
     }
   `)
 }
+
+// Helper function to fetch all haikus
+export async function getHaikus() {
+  return await client.fetch(`
+    *[_type == "haiku"] | order(order asc) {
+      _id,
+      title,
+      line1,
+      line2,
+      line3,
+      order
+    }
+  `)
+}

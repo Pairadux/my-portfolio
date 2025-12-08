@@ -1,12 +1,8 @@
 <script lang="ts">
-    import { assets } from "$app/paths";
     export let title: string;
     export let description: string;
     export let image: string;
     export let slug: string;
-
-    // Check if image is a full URL (from Sanity) or a local filename
-    $: imageUrl = image?.startsWith('http') ? image : `${assets}/images/portfolio/${image}`;
 </script>
 
 <a href="/projects/{slug}" class="no-underline">
@@ -28,10 +24,14 @@
             </div>
 
             <!-- PORTFOLIO IMAGE -->
-            <img
-                class="object-cover w-full brightness-50 transition-opacity group-hover:opacity-0"
-                src={imageUrl}
-                alt={title} />
+            {#if image}
+                <img
+                    class="object-cover w-full brightness-50 transition-opacity group-hover:opacity-0"
+                    src={image}
+                    alt={title} />
+            {:else}
+                <div class="w-full h-full bg-gray-300 dark:bg-gray-700 animate-pulse"></div>
+            {/if}
 
             <!-- PORTFOLIO TITLE -->
             <h2 class="absolute left-1/2 top-1/2 w-full heading-font group-hover:invisible group-hover:opacity-0 transition-opacity -translate-x-1/2 -translate-y-1/2 px-1 text-center text-2xl text-white md:text-3xl">

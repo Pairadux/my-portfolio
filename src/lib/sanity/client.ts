@@ -9,12 +9,20 @@ export const client: SanityClient = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true, // Use CDN for faster responses
+  useCdn: true,
 })
 
-// Helper function to fetch all projects
+async function safeFetch<T>(query: string, params?: Record<string, any>, fallback: T = null as T): Promise<T> {
+  try {
+    return await client.fetch(query, params)
+  } catch (error) {
+    console.warn('Sanity fetch failed:', error)
+    return fallback
+  }
+}
+
 export async function getProjects() {
-  return await client.fetch(`
+  return await safeFetch(`
     *[_type == "project"] | order(_createdAt desc) {
       _id,
       title,
@@ -23,12 +31,11 @@ export async function getProjects() {
       "image": image.asset->url,
       featured
     }
-  `)
+  `, undefined, [])
 }
 
-// Helper function to fetch featured projects only
 export async function getFeaturedProjects() {
-  return await client.fetch(`
+  return await safeFetch(`
     *[_type == "project" && featured == true] | order(_createdAt desc) {
       _id,
       title,
@@ -37,12 +44,11 @@ export async function getFeaturedProjects() {
       "image": image.asset->url,
       featured
     }
-  `)
+  `, undefined, [])
 }
 
-// Helper function to fetch a single project by slug
 export async function getProjectBySlug(slug: string) {
-  return await client.fetch(`
+  return await safeFetch(`
     *[_type == "project" && slug.current == $slug][0] {
       _id,
       title,
@@ -59,22 +65,20 @@ export async function getProjectBySlug(slug: string) {
       liveUrl,
       githubUrl
     }
-  `, { slug })
+  `, { slug }, null)
 }
 
-// Helper function to fetch hero section
 export async function getHero() {
-  return await client.fetch(`
+  return await safeFetch(`
     *[_type == "hero"][0] {
       introduction,
       "headshotImage": headshotImage.asset->url
     }
-  `)
+  `, undefined, null)
 }
 
-// Helper function to fetch all testimonials
 export async function getTestimonials() {
-  return await client.fetch(`
+  return await safeFetch(`
     *[_type == "testimonial"] | order(order asc) {
       _id,
       name,
@@ -84,12 +88,11 @@ export async function getTestimonials() {
       "image": image.asset->url,
       order
     }
-  `)
+  `, undefined, [])
 }
 
-// Helper function to fetch about page content
 export async function getAboutPage() {
-  return await client.fetch(`
+  return await safeFetch(`
     *[_type == "aboutPage"][0] {
       pageTitle,
       sections[] {
@@ -104,12 +107,11 @@ export async function getAboutPage() {
         }
       }
     }
-  `)
+  `, undefined, null)
 }
 
-// Helper function to fetch all skills
 export async function getSkills() {
-  return await client.fetch(`
+  return await safeFetch(`
     *[_type == "skill"] | order(order asc) {
       _id,
       name,
@@ -117,12 +119,11 @@ export async function getSkills() {
       "iconDark": iconDark.asset->url,
       order
     }
-  `)
+  `, undefined, [])
 }
 
-// Helper function to fetch all social links
 export async function getSocialLinks() {
-  return await client.fetch(`
+  return await safeFetch(`
     *[_type == "socialLink"] | order(order asc) {
       _id,
       platform,
@@ -131,12 +132,11 @@ export async function getSocialLinks() {
       svgPath,
       order
     }
-  `)
+  `, undefined, [])
 }
 
-// Helper function to fetch resume
 export async function getResume() {
-  return await client.fetch(`
+  return await safeFetch(`
     *[_type == "resume"][0] {
       summary,
       education,
@@ -146,12 +146,11 @@ export async function getResume() {
       certifications,
       footnotes
     }
-  `)
+  `, undefined, null)
 }
 
-// Helper function to fetch all haikus
 export async function getHaikus() {
-  return await client.fetch(`
+  return await safeFetch(`
     *[_type == "haiku"] | order(order asc) {
       _id,
       title,
@@ -160,5 +159,5 @@ export async function getHaikus() {
       line3,
       order
     }
-  `)
+  `, undefined, [])
 }

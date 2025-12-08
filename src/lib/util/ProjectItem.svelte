@@ -30,7 +30,9 @@
                     src={image}
                     alt={title} />
             {:else}
-                <div class="w-full h-full bg-gray-300 dark:bg-gray-700 animate-pulse"></div>
+                <div class="w-full h-full bg-blue-500/30 dark:bg-blue-500/40 animate-pulse flex items-center justify-center">
+                    <span class="text-white/80 text-sm font-light">Loading...</span>
+                </div>
             {/if}
 
             <!-- PORTFOLIO TITLE -->

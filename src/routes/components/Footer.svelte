@@ -35,10 +35,10 @@
                 {/each}
             </ul>
         {:else}
-            <div class="flex flex-row gap-4 p-2 animate-pulse">
-                <div class="h-12 w-12 bg-gray-300 dark:bg-gray-700 ring-2 ring-blue-500"></div>
-                <div class="h-12 w-12 bg-gray-300 dark:bg-gray-700 ring-2 ring-blue-500"></div>
-                <div class="h-12 w-12 bg-gray-300 dark:bg-gray-700 ring-2 ring-blue-500"></div>
+            <div class="flex flex-row gap-4 p-2">
+                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 ring-2 ring-blue-500/50 animate-pulse"></div>
+                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 ring-2 ring-blue-500/50 animate-pulse" style="animation-delay: 150ms"></div>
+                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 ring-2 ring-blue-500/50 animate-pulse" style="animation-delay: 300ms"></div>
             </div>
         {/if}
 

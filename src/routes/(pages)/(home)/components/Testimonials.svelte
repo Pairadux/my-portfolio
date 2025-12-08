@@ -90,14 +90,13 @@
                 </figure>
             {/key}
         {:else}
-            <div class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform animate-pulse">
-                <div class="flex items-center justify-center text-center">
-                    <div class="h-24 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
-                </div>
-                <div class="mt-6 flex items-center justify-center space-x-3">
-                    <div class="h-6 w-6 rounded-full bg-gray-300 dark:bg-gray-700"></div>
-                    <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded w-48"></div>
-                </div>
+            <div class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform">
+                <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold italic text-black/60 dark:text-white/60">
+                    <p>"People usually say nice things here. Trust me, they're very nice things."</p>
+                </blockquote>
+                <figcaption class="mt-6 flex items-center justify-center">
+                    <div class="text-black/50 dark:text-white/50 text-sm">(Loading testimonials...)</div>
+                </figcaption>
             </div>
         {/if}
     </div>

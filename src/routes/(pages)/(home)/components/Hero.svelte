@@ -24,11 +24,10 @@
                         ></span
                     >.
                 {:else}
-                    <div class="animate-pulse">
-                        <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded mb-2"></div>
-                        <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded mb-2"></div>
-                        <div class="h-4 bg-gray-300 dark:bg-gray-700 rounded w-3/4"></div>
-                    </div>
+                    <span class="italic text-black/60 dark:text-white/60">
+                        Imagine the most fascinating introduction you've ever read. This is probably better than that.
+                        (Content loading...)
+                    </span>
                 {/if}
             </svelte:fragment>
         </SectionHeader>
@@ -40,6 +39,6 @@
             class="z-10 h-80 w-80 rounded-full object-cover"
             alt="Austin Gause headshot" />
     {:else}
-        <div class="z-10 h-80 w-80 rounded-full bg-gray-300 dark:bg-gray-700 animate-pulse"></div>
+        <div class="z-10 h-80 w-80 rounded-full bg-blue-500/20 dark:bg-blue-500/30 animate-pulse border-4 border-blue-500/40"></div>
     {/if}
 </section>

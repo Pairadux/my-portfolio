@@ -23,26 +23,28 @@ async function safeFetch<T>(query: string, params?: Record<string, any>, fallbac
 
 export async function getProjects() {
   return await safeFetch(`
-    *[_type == "project"] | order(_createdAt desc) {
+    *[_type == "project"] | order(order asc) {
       _id,
       title,
       description,
       "slug": slug.current,
       "image": image.asset->url,
-      featured
+      featured,
+      order
     }
   `, undefined, [])
 }
 
 export async function getFeaturedProjects() {
   return await safeFetch(`
-    *[_type == "project" && featured == true] | order(_createdAt desc) {
+    *[_type == "project" && featured == true] | order(order asc) {
       _id,
       title,
       description,
       "slug": slug.current,
       "image": image.asset->url,
-      featured
+      featured,
+      order
     }
   `, undefined, [])
 }
@@ -56,6 +58,7 @@ export async function getProjectBySlug(slug: string) {
       "slug": slug.current,
       "image": image.asset->url,
       featured,
+      order,
       overview,
       technologies,
       features,

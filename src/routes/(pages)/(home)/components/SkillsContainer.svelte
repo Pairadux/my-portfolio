@@ -69,6 +69,9 @@
         border-radius: 6px;
         position: absolute;
         z-index: 1;
+        color: #f1f5f9;
+        background-color: #3b82f6;
+        filter: drop-shadow(0 4px 6px rgb(0 0 0 / 0.15));
     }
 
     .tooltip:hover .tooltiptext {
@@ -83,5 +86,6 @@
         margin-left: -5px;
         border-width: 5px;
         border-style: solid;
+        border-color: #3b82f6 transparent transparent transparent;
     }
 </style>

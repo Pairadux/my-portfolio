@@ -37,7 +37,7 @@
     }
 </script>
 
-<header class="mb-16 box-border bg-white p-4 shadow-sm dark:bg-black dark:shadow-lg">
+<header class="shadow-b shadow-b-strong mb-16 box-border bg-white p-4 dark:bg-black">
     <div class="container m-auto flex flex-col items-center md:flex-row md:justify-around">
         <!-- Brand -->
         <div class="flex w-full items-center justify-around md:w-fit">

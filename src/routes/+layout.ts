@@ -1,12 +1,16 @@
-import { getSocialLinks } from '$lib/sanity/client'
+import { getSocialLinks, getTestimonials } from '$lib/sanity/client'
 import type { LayoutLoad } from './$types'
 
 export const prerender = true;
 
 export const load: LayoutLoad = async () => {
-  const socialLinks = await getSocialLinks()
+  const [socialLinks, testimonials] = await Promise.all([
+      getSocialLinks(), 
+      getTestimonials()
+  ])
 
   return {
-    socialLinks
+    socialLinks,
+    testimonials
   }
 }

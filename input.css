@@ -44,10 +44,90 @@ html {
 .heading-font {
     font-family: "Fira Code", monospace !important;
     font-optical-sizing: auto;
-    font-weight: 700 !important; 
+    font-weight: 700 !important;
     font-style: normal !important;
 }
 
-.dark .shadow-inner-strong {
-    box-shadow: inset 0 4px 8px 0 rgb(0 0 0 / 0.2);
+.shadow-frame {
+    box-shadow:
+        0 0 12px 2px rgb(0 0 0 / 0.15),
+        0 0 4px 1px rgb(0 0 0 / 0.1); /* Adds a tighter core */
+}
+
+.dark .shadow-frame-strong {
+    box-shadow:
+        0 0 20px 2px rgb(0 0 0 / 0.45),
+        /* Wider reach */ 0 0 8px 1px rgb(0 0 0 / 0.6); /* Stronger core to match .shadow-lr */
+}
+
+/* --- L-R-Top (Shadows on Left, Right, and Top) --- */
+.shadow-lrt {
+    box-shadow:
+        0 -10px 12px -4px rgb(0 0 0 / 0.15),
+        /* Top Push */ -8px 0 10px -6px rgb(0 0 0 / 0.12),
+        /* Left Side */ 8px 0 10px -6px rgb(0 0 0 / 0.12); /* Right Side */
+}
+
+.dark .shadow-lrt-strong {
+    box-shadow:
+        0 -18px 20px -8px rgb(0 0 0 / 0.5),
+        /* Top Push */ -12px -5px 15px -10px rgb(0 0 0 / 0.4),
+        /* Top-Left Corner blend */ 12px -5px 15px -10px rgb(0 0 0 / 0.4); /* Top-Right Corner blend */
+}
+
+/* --- L-R-Bottom (Shadows on Left, Right, and Bottom) --- */
+.shadow-lrb {
+    box-shadow:
+        0 10px 12px -4px rgb(0 0 0 / 0.15),
+        /* Bottom Push */ -8px 0 10px -6px rgb(0 0 0 / 0.12),
+        /* Left Side */ 8px 0 10px -6px rgb(0 0 0 / 0.12); /* Right Side */
+}
+
+.dark .shadow-lrb-strong {
+    box-shadow:
+        0 18px 20px -8px rgb(0 0 0 / 0.5),
+        /* Bottom Push */ -12px 5px 15px -10px rgb(0 0 0 / 0.4),
+        /* Bottom-Left Corner blend */ 12px 5px 15px -10px rgb(0 0 0 / 0.4); /* Bottom-Right Corner blend */
+}
+
+.shadow-lr {
+    box-shadow: 
+        /* Left Side Layers */
+        -18px 0 12px -12px rgb(0 0 0 / 0.25),
+        -12px 0 8px -8px rgb(0 0 0 / 0.15),
+        /* Right Side Layers */ 18px 0 12px -12px rgb(0 0 0 / 0.25),
+        12px 0 8px -8px rgb(0 0 0 / 0.15);
+}
+
+.dark .shadow-lr-strong {
+    box-shadow: 
+        /* Left Side Layers (Heavier for Dark Mode) */
+        -22px 0 15px -14px rgb(0 0 0 / 0.6),
+        -14px 0 10px -10px rgb(0 0 0 / 0.4),
+        /* Right Side Layers */ 22px 0 15px -14px rgb(0 0 0 / 0.6),
+        14px 0 10px -10px rgb(0 0 0 / 0.4);
+}
+
+.shadow-inner-t {
+    /* Offset-y: 8px | Blur: 10px | Spread: -8px */
+    box-shadow: inset 0 8px 10px -8px rgb(0 0 0 / 0.15);
+}
+
+.dark .shadow-inner-t-strong {
+    /* We layer this to match the "depth" of your LR-strong shadows */
+    box-shadow:
+        inset 0 14px 12px -10px rgb(0 0 0 / 0.4),
+        inset 0 6px 4px -4px rgb(0 0 0 / 0.3);
+}
+
+.shadow-b {
+    /* Offset-y: 10px | Blur: 12px | Spread: -8px */
+    box-shadow: 0 10px 12px -8px rgb(0 0 0 / 0.15);
+}
+
+.dark .shadow-b-strong {
+    /* Layered to match the high-contrast "LR" style */
+    box-shadow:
+        0 15px 20px -12px rgb(0 0 0 / 0.5),
+        0 8px 10px -6px rgb(0 0 0 / 0.3);
 }

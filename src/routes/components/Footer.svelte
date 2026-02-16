@@ -12,12 +12,12 @@
 </script>
 
 <!-- FOOTER -->
-<footer class="shadow-inner-strong mt-16 box-content bg-white pb-32 pt-8 shadow-inner dark:bg-black">
+<footer class="shadow-inner-t-strong shadow-inner-t box-content bg-white pb-32 pt-8 dark:bg-black">
     <div class="flex flex-col items-center justify-center gap-2">
         {#if socialLinks.length > 0}
             <ul class="flex flex-row gap-4 p-2">
                 {#each socialLinks as item}
-                    <li class="group flex h-12 w-12 items-center justify-center ring-2 ring-blue-500 hover:bg-blue-500">
+                    <li class="group flex h-12 w-12 items-center justify-center shadow-lg ring-2 ring-blue-500 hover:bg-blue-500">
                         <a
                             target="_blank"
                             href={item.url}
@@ -36,13 +36,19 @@
             </ul>
         {:else}
             <div class="flex flex-row gap-4 p-2">
-                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 ring-2 ring-blue-500/50 animate-pulse"></div>
-                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 ring-2 ring-blue-500/50 animate-pulse" style="animation-delay: 150ms"></div>
-                <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 ring-2 ring-blue-500/50 animate-pulse" style="animation-delay: 300ms"></div>
+                <div class="h-12 w-12 animate-pulse bg-blue-500/20 ring-2 ring-blue-500/50 dark:bg-blue-500/30"></div>
+                <div
+                    class="h-12 w-12 animate-pulse bg-blue-500/20 ring-2 ring-blue-500/50 dark:bg-blue-500/30"
+                    style="animation-delay: 150ms">
+                </div>
+                <div
+                    class="h-12 w-12 animate-pulse bg-blue-500/20 ring-2 ring-blue-500/50 dark:bg-blue-500/30"
+                    style="animation-delay: 300ms">
+                </div>
             </div>
         {/if}
 
         <h4 class="text-black dark:text-white">Made with <strike class="decoration-red-500 decoration-4">love</strike> crayons &#169; 2024 - {currentYear}</h4>
-        <p class="text-black dark:text-white">.- -.-. --.&nbsp;&nbsp;.-.. --- ...- . ...&nbsp;&nbsp;-.- .-. -...</p>
+        <p class="text-black dark:text-white">.- -.-. --. / .-.. --- ...- . ... / -.- .-. -...</p>
     </div>
 </footer>

@@ -3,18 +3,17 @@
 @tailwind utilities;
 
 /* Match the outer theme color so resizing never flashes white */
+/* padding-left balances the visual margin against the scrollbar on the right */
 html {
+    --scrollbar-w: 8px;
     background-color: #3b82f6; /* blue-500 */
-}
-
-/* Scrollbar styling */
-html {
     scrollbar-color: #93c5fd #3b82f6; /* blue-300 thumb, blue-500 track */
     scrollbar-width: thin;
+    padding-left: var(--scrollbar-w);
 }
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: var(--scrollbar-w);
 }
 
 ::-webkit-scrollbar-track {

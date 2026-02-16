@@ -17,7 +17,7 @@
 <div class="flex w-full flex-col items-center">
     <Hero hero={data.hero} />
 
-        <hr class="my-16 h-px w-3/4 border-[1.5px] border-dashed border-black dark:border-white" />
+    <hr class="my-16 h-px w-3/4 border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
 
     <SkillsContainer skills={data.skills} />
 

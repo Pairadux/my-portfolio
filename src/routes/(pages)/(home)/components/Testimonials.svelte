@@ -19,6 +19,9 @@
     let intervalPaused = false;
     const AUTO_ADVANCE_DURATION = 5000;
 
+    let testimonialHeights: number[] = [];
+    $: maxHeight = testimonialHeights.length > 0 ? Math.max(...testimonialHeights) : 0;
+
     function resetInterval() {
         if (interval) {
             clearInterval(interval);
@@ -63,9 +66,32 @@
     });
 </script>
 
-<section class="flex w-full flex-col items-center">
+<section class="relative flex w-full flex-col items-center">
     <i class="fa-solid fa-quote-left mx-auto mb-3 text-5xl text-black dark:text-white" />
-    <div class="relative h-96 w-4/5 overflow-hidden min-[370px]:h-72 sm:h-48 md:h-36 xl:h-28">
+    <!-- Renders all testimonials invisibly to measure the tallest one -->
+    {#if testimonials.length > 0}
+        <div class="invisible absolute -z-10 w-4/5 pointer-events-none" aria-hidden="true">
+            {#each testimonials as testimonial, i}
+                <div bind:clientHeight={testimonialHeights[i]}>
+                    <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold">
+                        <p>"{testimonial.message}"</p>
+                    </blockquote>
+                    <figcaption class="mt-6 flex items-center justify-center space-x-3">
+                        {#if testimonial.image}
+                            <img class="h-6 w-6 rounded-full object-cover object-center" src={testimonial.image} alt="" />
+                        {/if}
+                        <div class="flex items-center divide-x-2">
+                            <div class="pr-3 font-semibold">{testimonial.name}</div>
+                            <div class="pl-3 font-light">{testimonial.position} at {testimonial.company}</div>
+                        </div>
+                    </figcaption>
+                </div>
+            {/each}
+        </div>
+    {/if}
+    <div
+        class="relative w-4/5 overflow-hidden {testimonials.length === 0 ? 'h-48' : ''}"
+        style:height={maxHeight > 0 ? `${maxHeight}px` : null}>
         {#if testimonials.length > 0}
             {#key currentTestimonial}
                 <figure

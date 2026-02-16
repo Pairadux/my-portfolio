@@ -13,7 +13,7 @@
 </script>
 
 <!-- PORTFOLIO SECTION -->
-<section class="flex w-full flex-col items-center">
+<section class="flex w-full flex-col items-center px-8">
     <!-- TITLE -->
     <div class="w-4/5">
         <SectionHeader>

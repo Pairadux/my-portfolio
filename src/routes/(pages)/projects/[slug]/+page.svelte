@@ -26,10 +26,10 @@
         {#if project.liveUrl || project.githubUrl}
             <div class="flex gap-4 my-4">
                 {#if project.liveUrl}
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">🔗 Live Demo</a>
+                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">Live Demo</a>
                 {/if}
                 {#if project.githubUrl}
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">💻 GitHub</a>
+                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="text-blue-500 underline">GitHub</a>
                 {/if}
             </div>
         {/if}

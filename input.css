@@ -2,6 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Match the outer theme color so resizing never flashes white */
+html {
+    background-color: #3b82f6; /* blue-500 */
+}
+
+/* Scrollbar styling */
+html {
+    scrollbar-color: #93c5fd #3b82f6; /* blue-300 thumb, blue-500 track */
+    scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #3b82f6;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #93c5fd;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #60a5fa; /* blue-400 */
+}
+
 /* p, */
 /* span, */
 /* h1, */

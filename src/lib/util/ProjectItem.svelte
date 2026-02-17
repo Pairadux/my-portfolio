@@ -25,7 +25,7 @@
 
             <!-- PORTFOLIO IMAGE -->
             {#if image}
-                {#if title == "Muxly" || title == "Lapse"}
+                {#if title == "Muxly" || title == "Lapse" || title == "Gigafont"}
                     <img
                         class="w-full bg-blue-500 object-contain brightness-100 transition-opacity group-hover:opacity-0"
                         src={image}
@@ -42,7 +42,7 @@
                 </div>
             {/if}
 
-            {#if title != "Muxly" && title != "Lapse"}
+            {#if title != "Muxly" && title != "Lapse" && title != "Gigafont"}
                 <!-- PORTFOLIO TITLE -->
                 <h2 class="heading-font absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-1 text-center text-2xl text-white transition-opacity group-hover:invisible group-hover:opacity-0 md:text-3xl">
                     {title}

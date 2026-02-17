@@ -53,7 +53,6 @@
                     href="https://www.youtube.com/watch?v=jabH3wRwiWQ"
                     class="italic text-blue-500 underline"
                     target="_blank">discuss the political and economic state of the world right now.</a>
-                Let's build something amazing together!
             </p>
         {:else}
             <h2>About</h2>

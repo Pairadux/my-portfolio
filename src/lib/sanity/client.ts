@@ -100,6 +100,10 @@ export async function getAboutPage() {
       pageTitle,
       sections[] {
         _type,
+        _type == "headingSection" => {
+          text,
+          level
+        },
         _type == "textSection" => {
           content
         },

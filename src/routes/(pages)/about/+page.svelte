@@ -21,12 +21,16 @@
         {#if hasContent}
             <h2>{aboutPage.pageTitle}</h2>
 
-            <hr />
-            <p class="font-bold text-red-500">NOTE:<br />THIS IS A ROUGH DRAFT<br />The vast majority of this is subject to change!<br />Though the primary details are completely true.<br />I just haven't had the time to write out the details yet :)</p>
-            <hr />
-
             {#each aboutPage.sections as section}
-                {#if section._type === "textSection"}
+                {#if section._type === "headingSection"}
+                    {#if section.level === "h2"}
+                        <h2>{section.text}</h2>
+                    {:else if section.level === "h4"}
+                        <h4>{section.text}</h4>
+                    {:else}
+                        <h3>{section.text}</h3>
+                    {/if}
+                {:else if section._type === "textSection"}
                     <p>{section.content}</p>
                 {:else if section._type === "imageSection"}
                     <figure>

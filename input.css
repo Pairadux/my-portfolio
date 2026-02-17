@@ -3,17 +3,17 @@
 @tailwind utilities;
 
 /* Match the outer theme color so resizing never flashes white */
-/* padding-left balances the visual margin against the scrollbar on the right */
+/* scrollbar-gutter: stable reserves scrollbar space even on short pages,  */
+/* preventing layout jumps when navigating between pages                   */
 html {
-    --scrollbar-w: 8px;
     background-color: #3b82f6; /* blue-500 */
     scrollbar-color: #93c5fd #3b82f6; /* blue-300 thumb, blue-500 track */
     scrollbar-width: thin;
-    padding-left: var(--scrollbar-w);
+    scrollbar-gutter: stable both-edges;
 }
 
 ::-webkit-scrollbar {
-    width: var(--scrollbar-w);
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {

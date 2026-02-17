@@ -31,15 +31,15 @@
             </section>
         {/if}
         <div class="{isHome ? 'shadow-frame shadow-frame-strong' : ''} relative">
-            {#if data.testimonials.length > 0}
+            {#if data.testimonials.length > 0 && isHome}
                 <!-- PSUEDO-PADDING -->
                 <div class="relative z-10 h-16"></div>
                 <div class="container m-auto flex flex-col items-center">
                     <Testimonials testimonials={data.testimonials} />
                 </div>
+                <!-- PSUEDO-PADDING -->
+                <div class="relative z-10 h-16"></div>
             {/if}
-            <!-- PSUEDO-PADDING -->
-            <div class="relative z-10 h-16"></div>
             <Footer socialLinks={data.socialLinks} />
         </div>
     </div>

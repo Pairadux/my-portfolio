@@ -58,31 +58,37 @@
                 {#if mobileNavOpen}
                     <div
                         transition:fade={{ duration: 300 }}
-                        class="fixed inset-0 z-20 flex h-screen w-full flex-col items-center gap-16 bg-white pt-16 dark:bg-black">
-                        <img
-                            src={`${assets}/images/brand-logo/pairadux-logo.svg`}
-                            alt=""
-                            class="h-32 w-32 rounded-full bg-blue-500" />
-                        <div class="flex flex-col items-center justify-center gap-16">
-                            {#each navItems as item}
-                                <button
-                                    type="button"
-                                    on:click={toggleMobileNav}>
-                                    <NavItem
-                                        classes="text-3xl"
-                                        href={item.href}
-                                        label={item.label} />
-                                </button>
-                            {/each}
+                        class="fixed inset-0 z-20 flex bg-blue-500"
+                        style="top: calc(-1 * env(safe-area-inset-top, 0px));">
+                        <div
+                            class="shadow-frame shadow-frame-strong mx-3 my-3 flex w-full grow flex-col items-center justify-center gap-16 bg-white md:mx-6 md:my-8 dark:bg-black"
+                            style="padding-top: max(4rem, env(safe-area-inset-top));">
+                            <!-- <img -->
+                            <!--     src={`${assets}/images/brand-logo/pairadux-logo.svg`} -->
+                            <!--     alt="" -->
+                            <!--     class="h-32 w-32 rounded-full bg-blue-500" /> -->
+                            <h1 class="heading-font text-center text-3xl underline decoration-4 underline-offset-2 dark:text-white">Austin Gause</h1>
+                            <div class="flex flex-col items-center justify-center gap-16">
+                                {#each navItems as item}
+                                    <button
+                                        type="button"
+                                        on:click={toggleMobileNav}>
+                                        <NavItem
+                                            classes="text-2xl"
+                                            href={item.href}
+                                            label={item.label} />
+                                    </button>
+                                {/each}
+                            </div>
+                            <ThemeToggleButton />
                         </div>
-                        <ThemeToggleButton />
                     </div>
                 {/if}
             {:else}
                 <div class="container hidden flex-row items-center justify-around gap-8 md:flex">
                     {#each navItems as item}
                         <NavItem
-                            classes=""
+                            classes="text-xl"
                             href={item.href}
                             label={item.label} />
                     {/each}

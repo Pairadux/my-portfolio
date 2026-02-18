@@ -11,7 +11,7 @@
     $: isHome = $page.route.id === "/(pages)/(home)";
 </script>
 
-<div class="px-3 py-5 transition-colors md:px-6 md:py-8 {$darkMode ? 'dark' : ''}">
+<div class="px-3 py-3 transition-colors md:px-6 md:py-8 {$darkMode ? 'dark' : ''}">
     <div class="{isHome ? '' : 'shadow-frame shadow-frame-strong'} box-border bg-white dark:bg-black">
         <div class="{isHome ? 'shadow-frame shadow-frame-strong' : ''} relative">
             <Header />

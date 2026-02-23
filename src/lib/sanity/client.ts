@@ -28,7 +28,7 @@ export async function getProjects() {
       title,
       description,
       "slug": slug.current,
-      "image": image.asset->url,
+      "image": thumbnail.asset->url,
       featured,
       order
     }
@@ -42,7 +42,7 @@ export async function getFeaturedProjects() {
       title,
       description,
       "slug": slug.current,
-      "image": image.asset->url,
+      "image": thumbnail.asset->url,
       featured,
       order
     }
@@ -56,7 +56,7 @@ export async function getProjectBySlug(slug: string) {
       title,
       description,
       "slug": slug.current,
-      "image": image.asset->url,
+      "image": coalesce(pageImage.asset->url, thumbnail.asset->url),
       featured,
       order,
       overview,

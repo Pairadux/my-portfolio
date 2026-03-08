@@ -87,7 +87,7 @@
 
         <!-- FOOTNOTES -->
         {#if resume.footnotes}
-            <hr />
+            <hr class="my-8 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
             <p class="text-sm">{resume.footnotes}</p>
         {/if}
         {:else}

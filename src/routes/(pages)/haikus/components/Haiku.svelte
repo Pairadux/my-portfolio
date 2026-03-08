@@ -4,4 +4,4 @@
 <p class="">
     <slot name="haiku" />
 </p>
-<hr />
+<hr class="my-16 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />

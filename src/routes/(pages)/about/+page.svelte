@@ -56,7 +56,7 @@
             </p>
         {:else}
             <h2>About</h2>
-            <hr />
+            <hr class="my-16 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
             <p class="italic text-black/60 dark:text-white/60">
                 Content currently loading... Probably something fascinating about technology, programming, and maybe a hobby or two.
             </p>

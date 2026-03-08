@@ -1,9 +1,9 @@
 <script lang="ts">
     import ProseArticle from "$lib/util/ProseArticle.svelte";
     import Haiku from "./components/Haiku.svelte";
-    import type { PageData } from './$types'
+    import type { PageData } from "./$types";
 
-    export let data: PageData
+    export let data: PageData;
 </script>
 
 <section class="mb-16 flex">
@@ -32,10 +32,13 @@
                     Worth the wait, I swear
                 </p>
             </div>
-            <hr />
-            <div class="space-y-4 mt-6">
-                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse"></div>
-                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 150ms"></div>
+            <hr class="my-16 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
+            <div class="mt-6 space-y-4">
+                <div class="h-24 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"></div>
+                <div
+                    class="h-24 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                    style="animation-delay: 150ms">
+                </div>
             </div>
         {/if}
     </ProseArticle>

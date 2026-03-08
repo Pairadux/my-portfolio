@@ -12,12 +12,12 @@
 <section class="mb-16">
     <ProseArticle>
         <h2 class="text-center">Thanks for taking the time to reach out.<br />How can I help?</h2>
-        <hr />
+        <hr class="my-16 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
         <form
             class="not-prose"
             action="https://formspree.io/f/mkgjjwnw"
             method="POST">
-            <div class="border-b border-gray-300 pb-12 dark:border-gray-600">
+            <div class="dark:border-gray-600">
                 <div class="space-y-12">
                     <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div class="sm:col-span-3">
@@ -81,6 +81,7 @@
                     </div>
                 </div>
             </div>
+            <hr class="my-16 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
             <div class="mt-6 flex items-center justify-end gap-x-6">
                 <button
                     type="button"

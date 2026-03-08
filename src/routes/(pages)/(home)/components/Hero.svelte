@@ -34,10 +34,12 @@
     </div>
 
     {#if hero?.headshotImage}
-        <img
-            src={hero.headshotImage}
-            class="z-10 h-80 w-80 rounded-full object-cover"
-            alt="Austin Gause headshot" />
+        <div class="shadow-inner-sunken rounded-full w-80 h-80 z-10">
+            <img
+                src={hero.headshotImage}
+                class="h-80 w-80 rounded-full object-cover"
+                alt="Austin Gause headshot" />
+        </div>
     {:else}
         <div class="z-10 h-80 w-80 rounded-full bg-blue-500/20 dark:bg-blue-500/30 animate-pulse border-4 border-blue-500/40"></div>
     {/if}

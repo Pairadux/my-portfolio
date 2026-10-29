@@ -8,6 +8,8 @@
 
     let { data }: Props = $props();
     let resume = $derived(data.resume);
+
+    const row = "flex flex-wrap justify-between gap-x-4";
 </script>
 
 <svelte:head>
@@ -28,13 +30,15 @@
             <h3 class="text-center dark:text-white">Education</h3>
             {#each resume.education as edu}
                 <p>
-                    <span
-                        ><strong class="dark:text-white"
-                            >{edu.institution}{#if edu.gpa}<span class="hidden sm:inline">, GPA {edu.gpa}</span>{/if}</strong
-                        ></span
-                    ><span class="float-right"><strong class="dark:text-white">{edu.location}</strong></span>
-                    <br />
-                    <span><em>{edu.degree}</em></span><span class="float-right"><em>{edu.endDate}</em></span>
+                    <span class={row}>
+                        <strong class="dark:text-white"
+                            >{edu.institution}{#if edu.gpa}<span class="hidden sm:inline">, GPA {edu.gpa}</span>{/if}</strong>
+                        <strong class="dark:text-white">{edu.location}</strong>
+                    </span>
+                    <span class={row}>
+                        <em>{edu.degree}</em>
+                        <em>{edu.endDate}</em>
+                    </span>
                 </p>
             {/each}
         {/if}
@@ -44,9 +48,14 @@
             <h3 class="text-center dark:text-white">Experience</h3>
             {#each resume.experience as exp}
                 <p>
-                    <span><strong class="dark:text-white">{exp.company}</strong></span><span class="float-right"><strong class="dark:text-white">{exp.location}</strong></span>
-                    <br />
-                    <span><em>{exp.position}</em></span><span class="float-right"><em>{exp.startDate} - {exp.endDate}</em></span>
+                    <span class={row}>
+                        <strong class="dark:text-white">{exp.company}</strong>
+                        <strong class="dark:text-white">{exp.location}</strong>
+                    </span>
+                    <span class={row}>
+                        <em>{exp.position}</em>
+                        <em>{exp.startDate} - {exp.endDate}</em>
+                    </span>
                 </p>
                 {#if exp.responsibilities && exp.responsibilities.length > 0}
                     <ul>
@@ -73,9 +82,11 @@
         {#if resume.activities && resume.activities.length > 0}
             <h3 class="text-center dark:text-white">Activities</h3>
             <p>
-                {#each resume.activities as activity, index}
-                    <span>{activity.activity}</span><span class="float-right">{activity.date}</span>
-                    {#if index < resume.activities.length - 1}<br />{/if}
+                {#each resume.activities as activity}
+                    <span class={row}>
+                        <span>{activity.activity}</span>
+                        <span>{activity.date}</span>
+                    </span>
                 {/each}
             </p>
         {/if}
@@ -84,9 +95,11 @@
         {#if resume.certifications && resume.certifications.length > 0}
             <h3 class="text-center dark:text-white">Certifications &amp; Achievements</h3>
             <p>
-                {#each resume.certifications as cert, index}
-                    <span>{cert.name}</span><span class="float-right">{cert.date}</span>
-                    {#if index < resume.certifications.length - 1}<br />{/if}
+                {#each resume.certifications as cert}
+                    <span class={row}>
+                        <span>{cert.name}</span>
+                        <span>{cert.date}</span>
+                    </span>
                 {/each}
             </p>
         {/if}

@@ -15,7 +15,7 @@
 
 <section>
     <ProseArticle>
-        <h2 class="text-center">Thanks for taking the time to reach out.<br />How can I help?</h2>
+        <h2 class="not-prose heading-font text-center text-2xl text-black md:text-3xl dark:text-white">Thanks for taking the time to reach out.<br />How can I help?</h2>
         <Divider />
         <form
             class="not-prose"

@@ -23,12 +23,12 @@
                     {hero.introduction}
                     <span>
                         <a
-                            class="italic text-blue-500 underline"
+                            class="text-blue-500 italic underline"
                             href="/about">about page</a
                         ></span
                     >.
                 {:else}
-                    <span class="italic text-black/60 dark:text-white/60"> Imagine the most fascinating introduction you've ever read. This is probably better than that. (Content loading...) </span>
+                    <span class="text-black/60 italic dark:text-white/60"> Imagine the most fascinating introduction you've ever read. This is probably better than that. (Content loading...) </span>
                 {/if}
             {/snippet}
         </SectionHeader>

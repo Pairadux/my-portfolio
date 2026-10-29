@@ -26,7 +26,7 @@
                 A few of my most recent projects. Want to see more? Check out my
                 <span
                     ><a
-                        class="italic text-blue-500 underline"
+                        class="text-blue-500 italic underline"
                         href="/projects">projects</a
                     ></span> page.
             {/snippet}
@@ -45,7 +45,7 @@
             {/each}
         {:else}
             <div class="col-span-3 text-center">
-                <p class="mb-8 italic text-black/60 dark:text-white/60">Projects loading... They're really impressive, I promise. Like, award-winning impressive. (Disclaimer: Awards may be self-awarded)</p>
+                <p class="mb-8 text-black/60 italic dark:text-white/60">Projects loading... They're really impressive, I promise. Like, award-winning impressive. (Disclaimer: Awards may be self-awarded)</p>
                 <div class="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
                     <div class="mx-auto h-72 w-72 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"></div>
                     <div

@@ -27,7 +27,7 @@
     </SectionHeader>
 
     <!-- PORTFOLIO ITEMS CONTAINER -->
-    <div class="mb-16 mt-8 flex flex-col gap-8 lg:grid lg:grid-cols-3">
+    <div class="mt-8 mb-16 flex flex-col gap-8 lg:grid lg:grid-cols-3">
         {#if projects.length > 0}
             {#each projects as project}
                 <ProjectItem

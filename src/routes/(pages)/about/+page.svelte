@@ -51,17 +51,17 @@
             <p>
                 Feel free to <a
                     href="/contact"
-                    class="italic text-blue-500 underline">reach out</a>
+                    class="text-blue-500 italic underline">reach out</a>
                 if you'd like to collaborate, chat about tech, or
                 <a
                     href="https://www.youtube.com/watch?v=jabH3wRwiWQ"
-                    class="italic text-blue-500 underline"
+                    class="text-blue-500 italic underline"
                     target="_blank">discuss the political and economic state of the world right now.</a>
             </p>
         {:else}
             <h2>About</h2>
             <hr class="my-16 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
-            <p class="italic text-black/60 dark:text-white/60">Content currently loading... Probably something fascinating about technology, programming, and maybe a hobby or two.</p>
+            <p class="text-black/60 italic dark:text-white/60">Content currently loading... Probably something fascinating about technology, programming, and maybe a hobby or two.</p>
             <div class="mt-8 space-y-4">
                 <div class="h-24 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"></div>
                 <div

@@ -8,6 +8,6 @@
     let { children }: Props = $props();
 </script>
 
-<article class="container prose prose-base prose-slate m-auto px-4 sm:prose-lg md:prose-xl dark:prose-invert">
+<article class="container m-auto prose prose-base px-4 prose-slate sm:prose-lg md:prose-xl dark:prose-invert">
     {@render children()}
 </article>

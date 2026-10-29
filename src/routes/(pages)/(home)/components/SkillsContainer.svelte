@@ -37,7 +37,7 @@
                             src={skill.iconDark || skill.iconLight}
                             alt={skill.name}
                             class="hidden h-full w-full object-contain dark:block" />
-                        <span class="tooltiptext bg-black text-white after:border-b-transparent after:border-l-transparent after:border-r-transparent after:border-t-black dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
+                        <span class="tooltiptext bg-black text-white after:border-t-black after:border-r-transparent after:border-b-transparent after:border-l-transparent dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
                     </div>
                 {/each}
             </div>
@@ -52,7 +52,7 @@
                             src={skill.iconDark || skill.iconLight}
                             alt={skill.name}
                             class="hidden h-full w-full object-contain dark:block" />
-                        <span class="tooltiptext bg-black text-white after:border-b-transparent after:border-l-transparent after:border-r-transparent after:border-t-black dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
+                        <span class="tooltiptext bg-black text-white after:border-t-black after:border-r-transparent after:border-b-transparent after:border-l-transparent dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
                     </div>
                 {/each}
             </div>

@@ -102,7 +102,7 @@
             {/if}
         {:else}
             <h3 class="text-center dark:text-white">Resume</h3>
-            <p class="mb-8 text-center italic text-black/60 dark:text-white/60">My resume is currently downloading from the cloud... the very slow, very dramatic cloud. In the meantime, know that I'm definitely qualified for things.</p>
+            <p class="mb-8 text-center text-black/60 italic dark:text-white/60">My resume is currently downloading from the cloud... the very slow, very dramatic cloud. In the meantime, know that I'm definitely qualified for things.</p>
             <div class="space-y-6">
                 <div class="h-16 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"></div>
                 <div

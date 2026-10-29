@@ -104,7 +104,7 @@
         {#if testimonials.length > 0}
             {#key currentTestimonial}
                 <figure
-                    class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform"
+                    class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform"
                     in:fly={{ x: transitionDirection === "next" ? 300 : -300 }}
                     out:fly={{ x: transitionDirection === "next" ? -300 : 300 }}>
                     <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold dark:text-white">
@@ -125,8 +125,8 @@
                 </figure>
             {/key}
         {:else}
-            <div class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform">
-                <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold italic text-black/60 dark:text-white/60">
+            <div class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform">
+                <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold text-black/60 italic dark:text-white/60">
                     <p>"People usually say nice things here. Trust me, they're very nice things."</p>
                 </blockquote>
                 <figcaption class="mt-6 flex items-center justify-center">

@@ -13,12 +13,12 @@
     href="/projects/{slug}"
     class="no-underline">
     <div class="group relative h-72 w-72 transition-transform hover:-translate-x-1 hover:-translate-y-1 hover:transform">
-        <div class="absolute left-2 top-2 h-[95%] w-[95%] outline-dashed outline-4 outline-offset-2 outline-blue-500 transition-all group-hover:left-4 group-hover:top-4"></div>
+        <div class="absolute top-2 left-2 h-[95%] w-[95%] outline-4 outline-offset-2 outline-blue-500 transition-all outline-dashed group-hover:top-4 group-hover:left-4"></div>
 
         <!-- PORTFOLIO ITEMS -->
         <div class="shadow-frame relative flex h-72 w-72 justify-center border-[1.5px] border-blue-500 bg-white">
             <!-- PORTFOLIO HOVER ITEMS -->
-            <div class="absolute left-1/2 top-1/2 flex h-full w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-2 bg-blue-500 px-4 opacity-0 transition-opacity group-hover:opacity-100">
+            <div class="absolute top-1/2 left-1/2 flex h-full w-full -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center gap-2 bg-blue-500 px-4 opacity-0 transition-opacity group-hover:opacity-100">
                 <h2 class="heading-font text-center text-2xl text-white transition md:text-3xl">
                     {title}
                 </h2>
@@ -48,7 +48,7 @@
 
             {#if title != "Muxly" && title != "Gigafont"}
                 <!-- PORTFOLIO TITLE -->
-                <h2 class="heading-font absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-1 text-center text-2xl text-white transition-opacity group-hover:invisible group-hover:opacity-0 md:text-3xl">
+                <h2 class="heading-font absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-1 text-center text-2xl text-white transition-opacity group-hover:invisible group-hover:opacity-0 md:text-3xl">
                     {title}
                 </h2>
             {/if}

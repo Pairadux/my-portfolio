@@ -16,7 +16,7 @@
 </script>
 
 <!-- FOOTER -->
-<footer class="shadow-inner-t-strong shadow-inner-t box-content bg-white pb-32 pt-8 dark:bg-black">
+<footer class="shadow-inner-t-strong shadow-inner-t box-content bg-white pt-8 pb-32 dark:bg-black">
     <div class="flex flex-col items-center justify-center gap-2">
         {#if socialLinks.length > 0}
             <ul class="flex flex-row gap-4 p-2">

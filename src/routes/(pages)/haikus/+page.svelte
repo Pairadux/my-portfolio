@@ -26,7 +26,7 @@
                 </Haiku>
             {/each}
         {:else}
-            <div class="italic text-black/60 dark:text-white/60">
+            <div class="text-black/60 italic dark:text-white/60">
                 <p class="font-bold dark:text-white/60">Loading Haiku</p>
                 <p>
                     Content loads slowly<br />

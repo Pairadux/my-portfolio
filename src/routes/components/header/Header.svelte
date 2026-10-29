@@ -60,13 +60,19 @@
 </header>
 
 {#if mobileNavOpen}
+    <!-- Safari colors its toolbars from fixed elements at the screen edges, but not while they fade in, -->
+    <!-- so the menu's top and bottom borders skip the fade (in their own block so they leave instantly too) -->
+    <div class="fixed inset-x-0 top-0 z-20 h-3 bg-blue-500 md:hidden"></div>
+    <div class="fixed inset-x-0 bottom-0 z-20 h-3 bg-blue-500 md:hidden"></div>
+{/if}
+
+{#if mobileNavOpen}
     <div
         id="mobile-nav"
         transition:fade={{ duration: 300 }}
-        class="fixed inset-0 z-20 flex bg-blue-500 md:hidden"
-        style="top: calc(-1 * env(safe-area-inset-top, 0px));">
+        class="fixed inset-x-0 inset-y-3 z-20 flex bg-blue-500 md:hidden">
         <nav
-            class="shadow-frame shadow-frame-strong relative mx-3 my-3 flex w-full grow flex-col items-center justify-center gap-16 bg-white dark:bg-black"
+            class="shadow-frame shadow-frame-strong relative mx-3 flex w-full grow flex-col items-center justify-center gap-16 bg-white dark:bg-black"
             style="padding-top: max(4rem, env(safe-area-inset-top));">
             <button
                 type="button"

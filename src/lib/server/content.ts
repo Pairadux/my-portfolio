@@ -128,7 +128,6 @@ interface ProjectFrontmatter {
     description: string;
     order: number;
     featured?: boolean;
-    logo?: boolean;
     thumbnail: string;
     image?: string;
     liveUrl?: string;
@@ -148,7 +147,6 @@ function readProject(slug: string) {
         description: data.description,
         order: data.order,
         featured: data.featured ?? false,
-        logo: data.logo ?? false,
         thumbnail: picture(file, data.thumbnail),
     };
     return { file, data, body, summary };

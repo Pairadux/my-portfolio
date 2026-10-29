@@ -3,7 +3,6 @@ title: Muxly
 description: A lightweight, highly customizable CLI for managing tmux sessions with ease.
 order: 0
 featured: true
-logo: true
 thumbnail: thumbnail.png
 image: cover.png
 githubUrl: https://github.com/Pairadux/Muxly

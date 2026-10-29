@@ -16,7 +16,6 @@ export interface ProjectSummary {
     description: string;
     order: number;
     featured: boolean;
-    logo: boolean;
     thumbnail: Picture;
 }
 

@@ -3,8 +3,12 @@
     import SectionHeader from "$lib/util/SectionHeader.svelte";
     import type { PageData } from './$types';
 
-    export let data: PageData;
-    $: projects = data.projects;
+    interface Props {
+        data: PageData;
+    }
+
+    let { data }: Props = $props();
+    let projects = $derived(data.projects);
 </script>
 
 <svelte:head>
@@ -16,8 +20,8 @@
 <section class="m-auto flex flex-col items-center">
     <!-- Section Header -->
     <SectionHeader>
-        <svelte:fragment slot="header">Projects</svelte:fragment>
-        <svelte:fragment slot="subheader">A comprehensive list of all of my projects.</svelte:fragment>
+        {#snippet header()}Projects{/snippet}
+        {#snippet subheader()}A comprehensive list of all of my projects.{/snippet}
     </SectionHeader>
 
     <!-- PORTFOLIO ITEMS CONTAINER -->

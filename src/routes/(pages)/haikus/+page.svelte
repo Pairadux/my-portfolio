@@ -3,7 +3,11 @@
     import Haiku from "./components/Haiku.svelte";
     import type { PageData } from "./$types";
 
-    export let data: PageData;
+    interface Props {
+        data: PageData;
+    }
+
+    let { data }: Props = $props();
 </script>
 
 <section class="mb-16 flex">
@@ -13,14 +17,12 @@
         {#if data.haikus.length > 0}
             {#each data.haikus as haiku (haiku._id)}
                 <Haiku>
-                    <svelte:fragment slot="title">
-                        {haiku.title}
-                    </svelte:fragment>
-                    <svelte:fragment slot="haiku">
+                    {#snippet title()}{haiku.title}{/snippet}
+                    {#snippet lines()}
                         {haiku.line1}<br />
                         {haiku.line2}<br />
                         {haiku.line3}
-                    </svelte:fragment>
+                    {/snippet}
                 </Haiku>
             {/each}
         {:else}

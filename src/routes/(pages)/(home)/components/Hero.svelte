@@ -1,10 +1,14 @@
 <script lang="ts">
     import SectionHeader from "$lib/util/SectionHeader.svelte";
 
-    export let hero: {
-        introduction: string;
-        headshotImage?: string;
-    } | null = null;
+    interface Props {
+        hero?: {
+            introduction: string;
+            headshotImage?: string;
+        } | null;
+    }
+
+    let { hero = null }: Props = $props();
 
     const greeting = "Hi, I'm <span class=\"text-blue-500\">Austin</span>";
 </script>
@@ -12,9 +16,9 @@
 <section class="flex flex-col-reverse items-center justify-center gap-16 lg:flex-row">
     <div class="w-4/5 lg:w-2/5">
         <SectionHeader>
-            <svelte:fragment slot="header">{@html greeting} &#128075</svelte:fragment>
+            {#snippet header()}{@html greeting} &#128075{/snippet}
 
-            <svelte:fragment slot="subheader">
+            {#snippet subheader()}
                 {#if hero?.introduction}
                     {hero.introduction}
                     <span>
@@ -29,7 +33,7 @@
                         (Content loading...)
                     </span>
                 {/if}
-            </svelte:fragment>
+            {/snippet}
         </SectionHeader>
     </div>
 

@@ -2,11 +2,15 @@
     import ProseArticle from "$lib/util/ProseArticle.svelte";
     import type { PageData } from './$types';
 
-    export let data: PageData;
-    const { resume } = data;
+    interface Props {
+        data: PageData;
+    }
+
+    let { data }: Props = $props();
+    let resume = $derived(data.resume);
 
     // Check if we have resume data
-    $: hasResume = resume && resume.summary;
+    let hasResume = $derived(resume && resume.summary);
 </script>
 
 <svelte:head>

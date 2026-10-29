@@ -1,23 +1,27 @@
 <script lang="ts">
     import SectionHeader from "$lib/util/SectionHeader.svelte";
 
-    export let skills: Array<{
-        _id: string;
-        name: string;
-        iconLight: string;
-        iconDark?: string;
-        order: number;
-    }> = [];
+    interface Props {
+        skills?: Array<{
+            _id: string;
+            name: string;
+            iconLight: string;
+            iconDark?: string;
+            order: number;
+        }>;
+    }
 
-    $: midpoint = Math.ceil(skills.length / 2);
-    $: firstRow = skills.slice(0, midpoint);
-    $: secondRow = skills.slice(midpoint);
+    let { skills = [] }: Props = $props();
+
+    let midpoint = $derived(Math.ceil(skills.length / 2));
+    let firstRow = $derived(skills.slice(0, midpoint));
+    let secondRow = $derived(skills.slice(midpoint));
 </script>
 
 <div class="relative md:block">
     <SectionHeader>
-        <svelte:fragment slot="header">Notable Skills</svelte:fragment>
-        <svelte:fragment slot="subheader">Hover/Tap for details</svelte:fragment>
+        {#snippet header()}Notable Skills{/snippet}
+        {#snippet subheader()}Hover/Tap for details{/snippet}
     </SectionHeader>
 
     {#if skills.length > 0}

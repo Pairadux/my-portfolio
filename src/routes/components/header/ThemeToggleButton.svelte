@@ -8,7 +8,7 @@
 
 <button
     type="button"
-    on:click={darkModeToggle}>
+    onclick={darkModeToggle}>
     {#if $darkMode}
         <svg
             class="h-16 w-16 md:h-8 md:w-8"
@@ -109,7 +109,7 @@
                         stroke-width: 3px;
                     }
                 </style></defs
-            ><title /><circle
+            ><title></title><circle
                 class="cls-1"
                 cx="32"
                 cy="32"

@@ -1,12 +1,16 @@
 <script lang="ts">
-    export let socialLinks: Array<{
-        _id: string;
-        platform: string;
-        url: string;
-        svgViewBox: string;
-        svgPath: string;
-        order: number;
-    }> = [];
+    interface Props {
+        socialLinks?: Array<{
+            _id: string;
+            platform: string;
+            url: string;
+            svgViewBox: string;
+            svgPath: string;
+            order: number;
+        }>;
+    }
+
+    let { socialLinks = [] }: Props = $props();
 
     const currentYear = new Date().getFullYear();
 </script>

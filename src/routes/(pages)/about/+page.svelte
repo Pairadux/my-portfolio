@@ -2,11 +2,15 @@
     import ProseArticle from "$lib/util/ProseArticle.svelte";
     import type { PageData } from "./$types";
 
-    export let data: PageData;
-    const { aboutPage } = data;
+    interface Props {
+        data: PageData;
+    }
+
+    let { data }: Props = $props();
+    let aboutPage = $derived(data.aboutPage);
 
     // Check if we have Sanity content or need to show fallback
-    $: hasContent = aboutPage && aboutPage.sections && aboutPage.sections.length > 0;
+    let hasContent = $derived(aboutPage && aboutPage.sections && aboutPage.sections.length > 0);
 </script>
 
 <svelte:head>

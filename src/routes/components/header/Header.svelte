@@ -5,7 +5,7 @@
     import ThemeToggleButton from "./ThemeToggleButton.svelte";
 
     // Responsive Viewport Check
-    let isMobile = false;
+    let isMobile = $state(false);
     onMount(() => {
         const checkWidth = () => {
             isMobile = window.innerWidth < 768;
@@ -23,17 +23,17 @@
         { href: "/contact", label: "Contact" },
     ];
 
-    let mobileNavOpen = false;
+    let mobileNavOpen = $state(false);
     const toggleMobileNav = () => {
         mobileNavOpen = !mobileNavOpen;
     };
 
     // Prevent scrolling when mobile nav is open
-    $: {
+    $effect(() => {
         if (isMobile) {
             document.body.style.overflow = mobileNavOpen ? "hidden" : "auto";
         }
-    }
+    });
 </script>
 
 <header class="shadow-b shadow-b-strong mb-16 box-border bg-white p-4 dark:bg-black">
@@ -46,8 +46,8 @@
                 <button
                     type="button"
                     class="h-6 w-6 md:hidden"
-                    on:click={toggleMobileNav}>
-                    <i class="fa-solid fa-bars text-2xl text-black dark:text-white" />
+                    onclick={toggleMobileNav}>
+                    <i class="fa-solid fa-bars text-2xl text-black dark:text-white"></i>
                 </button>
             </div>
         </div>
@@ -67,7 +67,7 @@
                                 {#each navItems as item}
                                     <button
                                         type="button"
-                                        on:click={toggleMobileNav}>
+                                        onclick={toggleMobileNav}>
                                         <NavItem
                                             classes="text-2xl"
                                             href={item.href}

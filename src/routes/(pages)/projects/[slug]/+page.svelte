@@ -2,8 +2,12 @@
     import ProseArticle from "$lib/util/ProseArticle.svelte";
     import type { PageData } from "./$types";
 
-    export let data: PageData;
-    const { project } = data;
+    interface Props {
+        data: PageData;
+    }
+
+    let { data }: Props = $props();
+    let project = $derived(data.project);
 </script>
 
 <svelte:head>

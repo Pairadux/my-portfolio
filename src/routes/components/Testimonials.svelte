@@ -2,25 +2,29 @@
     import { fly } from "svelte/transition";
     import { onMount, onDestroy } from "svelte";
 
-    export let testimonials: Array<{
-        _id: string;
-        name: string;
-        position: string;
-        company: string;
-        message: string;
-        image?: string;
-        order: number;
-    }> = [];
+    interface Props {
+        testimonials?: Array<{
+            _id: string;
+            name: string;
+            position: string;
+            company: string;
+            message: string;
+            image?: string;
+            order: number;
+        }>;
+    }
 
-    let index = 0;
-    $: currentTestimonial = testimonials[index];
-    let transitionDirection = "next";
+    let { testimonials = [] }: Props = $props();
+
+    let index = $state(0);
+    let currentTestimonial = $derived(testimonials[index]);
+    let transitionDirection = $state("next");
     let interval: number;
-    let intervalPaused = false;
+    let intervalPaused = $state(false);
     const AUTO_ADVANCE_DURATION = 5000;
 
-    let testimonialHeights: number[] = [];
-    $: maxHeight = testimonialHeights.length > 0 ? Math.max(...testimonialHeights) : 0;
+    let testimonialHeights: number[] = $state([]);
+    let maxHeight = $derived(testimonialHeights.length > 0 ? Math.max(...testimonialHeights) : 0);
 
     function resetInterval() {
         if (interval) {
@@ -67,7 +71,7 @@
 </script>
 
 <section class="relative flex w-full flex-col items-center">
-    <i class="fa-solid fa-quote-left mx-auto mb-3 text-5xl text-black dark:text-white" />
+    <i class="fa-solid fa-quote-left mx-auto mb-3 text-5xl text-black dark:text-white"></i>
     <!-- Renders all testimonials invisibly to measure the tallest one -->
     {#if testimonials.length > 0}
         <div class="invisible absolute -z-10 w-4/5 pointer-events-none" aria-hidden="true">
@@ -127,14 +131,14 @@
         {/if}
     </div>
     <div class="flex items-center gap-8 pt-6 text-2xl text-black dark:text-white">
-        <button on:click={prevTestimonial} disabled={testimonials.length === 0}><i class="fa-solid fa-backward" /></button>
+        <button onclick={prevTestimonial} disabled={testimonials.length === 0}><i class="fa-solid fa-backward"></i></button>
         <div class="w-6 text-center">
             {#if intervalPaused}
-                <button on:click={toggleInterval} disabled={testimonials.length === 0}><i class="fa-solid fa-play" /></button>
+                <button onclick={toggleInterval} disabled={testimonials.length === 0}><i class="fa-solid fa-play"></i></button>
             {:else}
-                <button on:click={toggleInterval} disabled={testimonials.length === 0}><i class="fa-solid fa-pause" /></button>
+                <button onclick={toggleInterval} disabled={testimonials.length === 0}><i class="fa-solid fa-pause"></i></button>
             {/if}
         </div>
-        <button on:click={nextTestimonial} disabled={testimonials.length === 0}><i class="fa-solid fa-forward" /></button>
+        <button onclick={nextTestimonial} disabled={testimonials.length === 0}><i class="fa-solid fa-forward"></i></button>
     </div>
 </section>

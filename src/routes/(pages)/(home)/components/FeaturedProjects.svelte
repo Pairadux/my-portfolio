@@ -2,14 +2,18 @@
     import ProjectItem from "$lib/util/ProjectItem.svelte";
     import SectionHeader from "$lib/util/SectionHeader.svelte";
 
-    export let projects: Array<{
-        _id: string;
-        title: string;
-        description: string;
-        slug: string;
-        image: string;
-        featured: boolean;
-    }> = [];
+    interface Props {
+        projects?: Array<{
+            _id: string;
+            title: string;
+            description: string;
+            slug: string;
+            image: string;
+            featured: boolean;
+        }>;
+    }
+
+    let { projects = [] }: Props = $props();
 </script>
 
 <!-- PORTFOLIO SECTION -->
@@ -17,15 +21,15 @@
     <!-- TITLE -->
     <div class="w-4/5">
         <SectionHeader>
-            <svelte:fragment slot="header">Recent Projects</svelte:fragment>
-            <svelte:fragment slot="subheader">
+            {#snippet header()}Recent Projects{/snippet}
+            {#snippet subheader()}
                 A few of my most recent projects. Want to see more? Check out my
                 <span
                     ><a
                         class="italic text-blue-500 underline"
                         href="/projects">projects</a
                     ></span> page.
-            </svelte:fragment>
+            {/snippet}
         </SectionHeader>
     </div>
 

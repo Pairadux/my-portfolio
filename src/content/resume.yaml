@@ -1,0 +1,104 @@
+summary: "A Computer Scientist with a background in systems programming, Linux tooling, and CLI application development. Experienced in Go and C, with a focus on building low-friction developer tools: including a tmux session manager, a window-manager session tracker, and a fuzzy-search CLI for file organization. Demonstrated ability to lead small teams, manage complex technical projects, and communicate effectively across disciplines. Eager to apply my technical knowledge and problem-solving abilities in an environment that values reliability, craftsmanship, and continuous learning."
+education:
+    - institution: Valdosta State University
+      degree: B.S. Computer Science, Math Minor
+      location: Valdosta, GA
+      startDate: August 2022
+      endDate: May 2026
+      gpa: "3.73"
+    - institution: Bainbridge High School
+      degree: High School Diploma
+      location: Bainbridge, GA
+      startDate: Aug 2018
+      endDate: May 2022
+      gpa: "3.89"
+experience:
+    - company: Network Services
+      position: Network Student Assistant
+      location: Valdosta, GA
+      startDate: May 2024
+      endDate: May 2026
+      responsibilities:
+          - Assist in the configuration and maintenance of network hardware and software to ensure optimal performance and security.
+          - Monitor network activity and troubleshoot issues to minimize downtime and ensure seamless connectivity for users.
+          - Support senior network administrators in the implementation of new network projects and upgrades.
+          - Provide technical support and assistance to staff and students, resolving network-related problems promptly and effectively.
+    - company: Self Employed
+      position: Freelance Web Developer
+      location: Valdosta, GA
+      startDate: June 2022
+      endDate: May 2026
+      responsibilities:
+          - Design and develop high quality websites using a variety of web development tools and frameworks to meet or exceed customer requirements and expectations.
+          - Work directly with clients to ensure that projects are in-line with their vision, and that development is meeting their expectations both in terms of time and quality.
+    - company: ProcessPlan
+      position: Robot Trainer
+      location: Remote, USA
+      startDate: Jun 2023
+      endDate: Nov 2023
+      responsibilities:
+          - Utilized proprietary software to complete designated tasks to meet client needs and expectations in a timely manner.
+          - Interacted with superiors frequently to ensure accurate utilization of proprietary software and completion of client requests.
+          - Created automated workflows to assist in the completion of medial/tedious office tasks.
+    - company: New Media Center
+      position: Student Technician
+      location: Valdosta, GA
+      startDate: Sep 2022
+      endDate: Oct 2023
+      responsibilities:
+          - Managed multiple Excel spreadsheets for inventory management purposes.
+          - Collaborated with other student technicians to complete various digital media projects.
+          - Implemented and utilized multiple systems to provide smooth equipment rental and check-out to patrons.
+          - Assisted in the imaging and troubleshooting of various equipment, including cameras and laptops.
+    - company: The Home Depot
+      position: Customer Service - Flooring
+      location: Bainbridge, GA
+      startDate: Oct 2021
+      endDate: Aug 2022
+      responsibilities:
+          - Utilized Point of Sale (POS) Systems to facilitate transactions via cash, check, and credit/debit.
+          - Assisted in the development and execution of strategies to garner leads, promote key products, display on-sale items, and showcase seasonal merchandise.
+          - Attained multiple lift-equipment licenses to improve team support and provide a seamless experience for customers purchasing heavy or large items.
+    - company: Johnny Gause Flooring
+      position: LVP Installer
+      location: Bainbridge, GA
+      startDate: Sep 2019
+      endDate: Oct 2021
+      responsibilities:
+          - Primarily responsible for the installation of Luxury Vinyl Plank flooring and Carpet.
+          - Ensured the safe and organized delivery of materials, collaborating closely with job-site managers to ensure complete compliance with set policies.
+          - Managed job-site readiness and work area preparation for various operations.
+skills:
+    - category: Web Development Technologies
+      items: HTML, CSS, JS, Tailwindcss, Svelte, Bulma
+    - category: Computer Systems
+      items: Windows, MacOS, Linux
+    - category: Languages
+      items: Java, Python, C, Go,
+    - category: Applications
+      items: Adobe Products, Microsoft Office, Visual Studio Code, Neovim, JetBrains
+    - category: Misc
+      items: Commad Line Operation, Data Management, API Querying, Networking Fundamentals
+activities:
+    - activity: ACM - Member
+      date: 2023 - Current
+    - activity: ACM - Treasurer
+      date: 2023-2023†
+    - activity: Housing Move In Volunteer
+      date: Fall 2023
+certifications:
+    - name: Python
+      date: Codecademy 2022
+    - name: Web Development, Python
+      date: Educative 2023
+    - name: MS Office
+      date: Certiport 2020
+    - name: Dean's List
+      date: Fall 2022 - Fall 2025
+    - name: Zell Miller Recipient
+      date: May 2022
+    - name: Principles Award
+      date: May 2022
+    - name: 1250 Cumulative SAT Score
+      date: "2021"
+footnotes: †Had to step down from my position early due to multiple time-constraints I was experiencing at the time.

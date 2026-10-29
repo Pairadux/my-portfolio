@@ -45,6 +45,10 @@ function yaml<T>(file: string): T {
     return parse(read(file)) as T;
 }
 
+function list<T>(file: string): T[] {
+    return yaml<T[] | null>(file) ?? [];
+}
+
 function frontmatter<T>(file: string): { data: T; body: string } {
     const match = /^---\n([\s\S]*?)\n---\n([\s\S]*)$/.exec(read(file));
     if (!match) throw new Error(`Missing frontmatter in src/content/${file}`);
@@ -97,7 +101,7 @@ export function getResume(): Resume {
 }
 
 export function getSkills(): Skill[] {
-    return yaml<Skill[]>("skills.yaml").map((skill) => ({
+    return list<Skill>("skills.yaml").map((skill) => ({
         name: skill.name,
         icon: svg("skills.yaml", skill.icon),
         iconDark: skill.iconDark && svg("skills.yaml", skill.iconDark),
@@ -105,18 +109,18 @@ export function getSkills(): Skill[] {
 }
 
 export function getSocialLinks(): SocialLink[] {
-    return yaml<SocialLink[]>("social.yaml");
+    return list<SocialLink>("social.yaml");
 }
 
 export function getTestimonials(): Testimonial[] {
-    return yaml<(Omit<Testimonial, "image"> & { image?: string })[]>("testimonials.yaml").map((testimonial) => ({
+    return list<Omit<Testimonial, "image"> & { image?: string }>("testimonials.yaml").map((testimonial) => ({
         ...testimonial,
         image: testimonial.image ? picture("testimonials.yaml", testimonial.image) : undefined,
     }));
 }
 
 export function getHaikus(): Haiku[] {
-    return yaml<Haiku[]>("haikus.yaml");
+    return list<Haiku>("haikus.yaml");
 }
 
 interface ProjectFrontmatter {

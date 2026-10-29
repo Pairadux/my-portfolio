@@ -61,13 +61,17 @@
         {:else}
             <h2>About</h2>
             <hr class="my-16 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
-            <p class="italic text-black/60 dark:text-white/60">
-                Content currently loading... Probably something fascinating about technology, programming, and maybe a hobby or two.
-            </p>
+            <p class="italic text-black/60 dark:text-white/60">Content currently loading... Probably something fascinating about technology, programming, and maybe a hobby or two.</p>
             <div class="mt-8 space-y-4">
-                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse"></div>
-                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 150ms"></div>
-                <div class="h-24 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 300ms"></div>
+                <div class="h-24 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"></div>
+                <div
+                    class="h-24 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                    style="animation-delay: 150ms">
+                </div>
+                <div
+                    class="h-24 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                    style="animation-delay: 300ms">
+                </div>
             </div>
         {/if}
     </ProseArticle>

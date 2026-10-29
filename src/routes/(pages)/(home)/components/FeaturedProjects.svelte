@@ -45,14 +45,17 @@
             {/each}
         {:else}
             <div class="col-span-3 text-center">
-                <p class="italic text-black/60 dark:text-white/60 mb-8">
-                    Projects loading... They're really impressive, I promise. Like, award-winning impressive.
-                    (Disclaimer: Awards may be self-awarded)
-                </p>
+                <p class="mb-8 italic text-black/60 dark:text-white/60">Projects loading... They're really impressive, I promise. Like, award-winning impressive. (Disclaimer: Awards may be self-awarded)</p>
                 <div class="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
-                    <div class="h-72 w-72 mx-auto bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse"></div>
-                    <div class="h-72 w-72 mx-auto bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 150ms"></div>
-                    <div class="h-72 w-72 mx-auto bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 300ms"></div>
+                    <div class="mx-auto h-72 w-72 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"></div>
+                    <div
+                        class="mx-auto h-72 w-72 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                        style="animation-delay: 150ms">
+                    </div>
+                    <div
+                        class="mx-auto h-72 w-72 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                        style="animation-delay: 300ms">
+                    </div>
                 </div>
             </div>
         {/if}

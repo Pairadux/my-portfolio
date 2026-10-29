@@ -1,7 +1,7 @@
 <script lang="ts">
     import ProjectItem from "$lib/util/ProjectItem.svelte";
     import SectionHeader from "$lib/util/SectionHeader.svelte";
-    import type { PageData } from './$types';
+    import type { PageData } from "./$types";
 
     interface Props {
         data: PageData;
@@ -13,7 +13,9 @@
 
 <svelte:head>
     <title>Austin Gause | Projects</title>
-    <meta name="description" content="A comprehensive list of all my projects." />
+    <meta
+        name="description"
+        content="A comprehensive list of all my projects." />
 </svelte:head>
 
 <!-- PORTFOLIO SECTION -->
@@ -35,9 +37,15 @@
                     slug={project.slug} />
             {/each}
         {:else}
-            <div class="h-72 w-72 mx-auto bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse"></div>
-            <div class="h-72 w-72 mx-auto bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 150ms"></div>
-            <div class="h-72 w-72 mx-auto bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 300ms"></div>
+            <div class="mx-auto h-72 w-72 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"></div>
+            <div
+                class="mx-auto h-72 w-72 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                style="animation-delay: 150ms">
+            </div>
+            <div
+                class="mx-auto h-72 w-72 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                style="animation-delay: 300ms">
+            </div>
         {/if}
     </div>
 </section>

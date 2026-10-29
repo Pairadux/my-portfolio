@@ -29,8 +29,14 @@
             <div class="flex flex-wrap justify-center gap-4">
                 {#each firstRow as skill}
                     <div class="tooltip h-12 w-12 md:h-14 md:w-14">
-                        <img src={skill.iconLight} alt={skill.name} class="h-full w-full object-contain dark:hidden" />
-                        <img src={skill.iconDark || skill.iconLight} alt={skill.name} class="hidden h-full w-full object-contain dark:block" />
+                        <img
+                            src={skill.iconLight}
+                            alt={skill.name}
+                            class="h-full w-full object-contain dark:hidden" />
+                        <img
+                            src={skill.iconDark || skill.iconLight}
+                            alt={skill.name}
+                            class="hidden h-full w-full object-contain dark:block" />
                         <span class="tooltiptext bg-black text-white after:border-b-transparent after:border-l-transparent after:border-r-transparent after:border-t-black dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
                     </div>
                 {/each}
@@ -38,8 +44,14 @@
             <div class="flex flex-wrap justify-center gap-4">
                 {#each secondRow as skill}
                     <div class="tooltip h-12 w-12 md:h-14 md:w-14">
-                        <img src={skill.iconLight} alt={skill.name} class="h-full w-full object-contain dark:hidden" />
-                        <img src={skill.iconDark || skill.iconLight} alt={skill.name} class="hidden h-full w-full object-contain dark:block" />
+                        <img
+                            src={skill.iconLight}
+                            alt={skill.name}
+                            class="h-full w-full object-contain dark:hidden" />
+                        <img
+                            src={skill.iconDark || skill.iconLight}
+                            alt={skill.name}
+                            class="hidden h-full w-full object-contain dark:block" />
                         <span class="tooltiptext bg-black text-white after:border-b-transparent after:border-l-transparent after:border-r-transparent after:border-t-black dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
                     </div>
                 {/each}
@@ -47,11 +59,23 @@
         </div>
     {:else}
         <div class="mt-8 flex justify-center gap-4">
-            <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse"></div>
-            <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 100ms"></div>
-            <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 200ms"></div>
-            <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 300ms"></div>
-            <div class="h-12 w-12 bg-blue-500/20 dark:bg-blue-500/30 rounded animate-pulse" style="animation-delay: 400ms"></div>
+            <div class="h-12 w-12 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"></div>
+            <div
+                class="h-12 w-12 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                style="animation-delay: 100ms">
+            </div>
+            <div
+                class="h-12 w-12 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                style="animation-delay: 200ms">
+            </div>
+            <div
+                class="h-12 w-12 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                style="animation-delay: 300ms">
+            </div>
+            <div
+                class="h-12 w-12 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                style="animation-delay: 400ms">
+            </div>
         </div>
     {/if}
 </div>

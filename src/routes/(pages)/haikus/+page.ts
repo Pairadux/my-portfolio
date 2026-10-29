@@ -1,9 +1,9 @@
-import { getHaikus } from '$lib/sanity/client'
-import type { PageLoad } from './$types'
+import { getHaikus } from "$lib/sanity/client";
+import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async () => {
-  const haikus = await getHaikus()
-  return {
-    haikus
-  }
-}
+    const haikus = await getHaikus();
+    return {
+        haikus,
+    };
+};

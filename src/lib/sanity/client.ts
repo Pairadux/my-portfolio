@@ -1,28 +1,29 @@
-import { createClient } from '@sanity/client'
-import type { SanityClient } from '@sanity/client'
+import { createClient } from "@sanity/client";
+import type { SanityClient } from "@sanity/client";
 
-const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || ''
-const dataset = import.meta.env.VITE_SANITY_DATASET || 'production'
-const apiVersion = '2024-01-01'
+const projectId = import.meta.env.VITE_SANITY_PROJECT_ID || "";
+const dataset = import.meta.env.VITE_SANITY_DATASET || "production";
+const apiVersion = "2024-01-01";
 
 export const client: SanityClient = createClient({
-  projectId,
-  dataset,
-  apiVersion,
-  useCdn: true,
-})
+    projectId,
+    dataset,
+    apiVersion,
+    useCdn: true,
+});
 
 async function safeFetch<T>(query: string, params?: Record<string, any>, fallback: T = null as T): Promise<T> {
-  try {
-    return await client.fetch(query, params)
-  } catch (error) {
-    console.warn('Sanity fetch failed:', error)
-    return fallback
-  }
+    try {
+        return await client.fetch(query, params);
+    } catch (error) {
+        console.warn("Sanity fetch failed:", error);
+        return fallback;
+    }
 }
 
 export async function getProjects() {
-  return await safeFetch(`
+    return await safeFetch(
+        `
     *[_type == "project"] | order(order asc) {
       _id,
       title,
@@ -32,11 +33,15 @@ export async function getProjects() {
       featured,
       order
     }
-  `, undefined, [])
+  `,
+        undefined,
+        [],
+    );
 }
 
 export async function getFeaturedProjects() {
-  return await safeFetch(`
+    return await safeFetch(
+        `
     *[_type == "project" && featured == true] | order(order asc) {
       _id,
       title,
@@ -46,11 +51,15 @@ export async function getFeaturedProjects() {
       featured,
       order
     }
-  `, undefined, [])
+  `,
+        undefined,
+        [],
+    );
 }
 
 export async function getProjectBySlug(slug: string) {
-  return await safeFetch(`
+    return await safeFetch(
+        `
     *[_type == "project" && slug.current == $slug][0] {
       _id,
       title,
@@ -68,20 +77,28 @@ export async function getProjectBySlug(slug: string) {
       liveUrl,
       githubUrl
     }
-  `, { slug }, null)
+  `,
+        { slug },
+        null,
+    );
 }
 
 export async function getHero() {
-  return await safeFetch(`
+    return await safeFetch(
+        `
     *[_type == "hero"][0] {
       introduction,
       "headshotImage": headshotImage.asset->url
     }
-  `, undefined, null)
+  `,
+        undefined,
+        null,
+    );
 }
 
 export async function getTestimonials() {
-  return await safeFetch(`
+    return await safeFetch(
+        `
     *[_type == "testimonial"] | order(order asc) {
       _id,
       name,
@@ -91,11 +108,15 @@ export async function getTestimonials() {
       "image": image.asset->url,
       order
     }
-  `, undefined, [])
+  `,
+        undefined,
+        [],
+    );
 }
 
 export async function getAboutPage() {
-  return await safeFetch(`
+    return await safeFetch(
+        `
     *[_type == "aboutPage"][0] {
       pageTitle,
       sections[] {
@@ -114,11 +135,15 @@ export async function getAboutPage() {
         }
       }
     }
-  `, undefined, null)
+  `,
+        undefined,
+        null,
+    );
 }
 
 export async function getSkills() {
-  return await safeFetch(`
+    return await safeFetch(
+        `
     *[_type == "skill"] | order(order asc) {
       _id,
       name,
@@ -126,11 +151,15 @@ export async function getSkills() {
       "iconDark": iconDark.asset->url,
       order
     }
-  `, undefined, [])
+  `,
+        undefined,
+        [],
+    );
 }
 
 export async function getSocialLinks() {
-  return await safeFetch(`
+    return await safeFetch(
+        `
     *[_type == "socialLink"] | order(order asc) {
       _id,
       platform,
@@ -139,11 +168,15 @@ export async function getSocialLinks() {
       svgPath,
       order
     }
-  `, undefined, [])
+  `,
+        undefined,
+        [],
+    );
 }
 
 export async function getResume() {
-  return await safeFetch(`
+    return await safeFetch(
+        `
     *[_type == "resume"][0] {
       summary,
       education,
@@ -153,11 +186,15 @@ export async function getResume() {
       certifications,
       footnotes
     }
-  `, undefined, null)
+  `,
+        undefined,
+        null,
+    );
 }
 
 export async function getHaikus() {
-  return await safeFetch(`
+    return await safeFetch(
+        `
     *[_type == "haiku"] | order(order asc) {
       _id,
       title,
@@ -166,5 +203,8 @@ export async function getHaikus() {
       line3,
       order
     }
-  `, undefined, [])
+  `,
+        undefined,
+        [],
+    );
 }

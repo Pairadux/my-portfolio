@@ -10,7 +10,7 @@
 
     let { hero = null }: Props = $props();
 
-    const greeting = "Hi, I'm <span class=\"text-blue-500\">Austin</span>";
+    const greeting = 'Hi, I\'m <span class="text-blue-500">Austin</span>';
 </script>
 
 <section class="flex flex-col-reverse items-center justify-center gap-16 lg:flex-row">
@@ -28,23 +28,20 @@
                         ></span
                     >.
                 {:else}
-                    <span class="italic text-black/60 dark:text-white/60">
-                        Imagine the most fascinating introduction you've ever read. This is probably better than that.
-                        (Content loading...)
-                    </span>
+                    <span class="italic text-black/60 dark:text-white/60"> Imagine the most fascinating introduction you've ever read. This is probably better than that. (Content loading...) </span>
                 {/if}
             {/snippet}
         </SectionHeader>
     </div>
 
     {#if hero?.headshotImage}
-        <div class="shadow-inner-sunken rounded-full w-80 h-80 z-10">
+        <div class="shadow-inner-sunken z-10 h-80 w-80 rounded-full">
             <img
                 src={hero.headshotImage}
                 class="h-80 w-80 rounded-full object-cover"
                 alt="Austin Gause headshot" />
         </div>
     {:else}
-        <div class="z-10 h-80 w-80 rounded-full bg-blue-500/20 dark:bg-blue-500/30 animate-pulse border-4 border-blue-500/40"></div>
+        <div class="z-10 h-80 w-80 animate-pulse rounded-full border-4 border-blue-500/40 bg-blue-500/20 dark:bg-blue-500/30"></div>
     {/if}
 </section>

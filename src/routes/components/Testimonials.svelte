@@ -74,7 +74,9 @@
     <i class="fa-solid fa-quote-left mx-auto mb-3 text-5xl text-black dark:text-white"></i>
     <!-- Renders all testimonials invisibly to measure the tallest one -->
     {#if testimonials.length > 0}
-        <div class="invisible absolute -z-10 w-4/5 pointer-events-none" aria-hidden="true">
+        <div
+            class="pointer-events-none invisible absolute -z-10 w-4/5"
+            aria-hidden="true">
             {#each testimonials as testimonial, i}
                 <div bind:clientHeight={testimonialHeights[i]}>
                     <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold">
@@ -82,7 +84,10 @@
                     </blockquote>
                     <figcaption class="mt-6 flex items-center justify-center space-x-3">
                         {#if testimonial.image}
-                            <img class="h-6 w-6 rounded-full object-cover object-center" src={testimonial.image} alt="" />
+                            <img
+                                class="h-6 w-6 rounded-full object-cover object-center"
+                                src={testimonial.image}
+                                alt="" />
                         {/if}
                         <div class="flex items-center divide-x-2">
                             <div class="pr-3 font-semibold">{testimonial.name}</div>
@@ -125,20 +130,28 @@
                     <p>"People usually say nice things here. Trust me, they're very nice things."</p>
                 </blockquote>
                 <figcaption class="mt-6 flex items-center justify-center">
-                    <div class="text-black/50 dark:text-white/50 text-sm">(Loading testimonials...)</div>
+                    <div class="text-sm text-black/50 dark:text-white/50">(Loading testimonials...)</div>
                 </figcaption>
             </div>
         {/if}
     </div>
     <div class="flex items-center gap-8 pt-6 text-2xl text-black dark:text-white">
-        <button onclick={prevTestimonial} disabled={testimonials.length === 0}><i class="fa-solid fa-backward"></i></button>
+        <button
+            onclick={prevTestimonial}
+            disabled={testimonials.length === 0}><i class="fa-solid fa-backward"></i></button>
         <div class="w-6 text-center">
             {#if intervalPaused}
-                <button onclick={toggleInterval} disabled={testimonials.length === 0}><i class="fa-solid fa-play"></i></button>
+                <button
+                    onclick={toggleInterval}
+                    disabled={testimonials.length === 0}><i class="fa-solid fa-play"></i></button>
             {:else}
-                <button onclick={toggleInterval} disabled={testimonials.length === 0}><i class="fa-solid fa-pause"></i></button>
+                <button
+                    onclick={toggleInterval}
+                    disabled={testimonials.length === 0}><i class="fa-solid fa-pause"></i></button>
             {/if}
         </div>
-        <button onclick={nextTestimonial} disabled={testimonials.length === 0}><i class="fa-solid fa-forward"></i></button>
+        <button
+            onclick={nextTestimonial}
+            disabled={testimonials.length === 0}><i class="fa-solid fa-forward"></i></button>
     </div>
 </section>

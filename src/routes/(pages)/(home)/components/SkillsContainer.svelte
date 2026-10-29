@@ -13,6 +13,24 @@
     let secondRow = $derived(skills.slice(midpoint));
 </script>
 
+{#snippet skillIcon(skill: Skill)}
+    <button
+        type="button"
+        class="tooltip h-12 w-12 md:h-14 md:w-14">
+        <img
+            src={skill.icon}
+            alt={skill.name}
+            class="h-full w-full object-contain dark:hidden" />
+        <img
+            src={skill.iconDark ?? skill.icon}
+            alt={skill.name}
+            class="hidden h-full w-full object-contain dark:block" />
+        <span
+            class="tooltiptext bg-black text-white after:border-t-black after:border-r-transparent after:border-b-transparent after:border-l-transparent dark:bg-white dark:text-black dark:after:border-t-white"
+            aria-hidden="true">{skill.name}</span>
+    </button>
+{/snippet}
+
 <div class="relative md:block">
     <SectionHeader>
         {#snippet header()}Notable Skills{/snippet}
@@ -22,32 +40,12 @@
     <div class="mt-8 flex flex-col items-center gap-4 lg:flex-row lg:justify-center">
         <div class="flex flex-wrap justify-center gap-4">
             {#each firstRow as skill}
-                <div class="tooltip h-12 w-12 md:h-14 md:w-14">
-                    <img
-                        src={skill.icon}
-                        alt={skill.name}
-                        class="h-full w-full object-contain dark:hidden" />
-                    <img
-                        src={skill.iconDark ?? skill.icon}
-                        alt={skill.name}
-                        class="hidden h-full w-full object-contain dark:block" />
-                    <span class="tooltiptext bg-black text-white after:border-t-black after:border-r-transparent after:border-b-transparent after:border-l-transparent dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
-                </div>
+                {@render skillIcon(skill)}
             {/each}
         </div>
         <div class="flex flex-wrap justify-center gap-4">
             {#each secondRow as skill}
-                <div class="tooltip h-12 w-12 md:h-14 md:w-14">
-                    <img
-                        src={skill.icon}
-                        alt={skill.name}
-                        class="h-full w-full object-contain dark:hidden" />
-                    <img
-                        src={skill.iconDark ?? skill.icon}
-                        alt={skill.name}
-                        class="hidden h-full w-full object-contain dark:block" />
-                    <span class="tooltiptext bg-black text-white after:border-t-black after:border-r-transparent after:border-b-transparent after:border-l-transparent dark:bg-white dark:text-black dark:after:border-t-white">{skill.name}</span>
-                </div>
+                {@render skillIcon(skill)}
             {/each}
         </div>
     </div>
@@ -75,7 +73,8 @@
         filter: drop-shadow(0 4px 6px rgb(0 0 0 / 0.15));
     }
 
-    .tooltip:hover .tooltiptext {
+    .tooltip:hover .tooltiptext,
+    .tooltip:focus-visible .tooltiptext {
         visibility: visible;
     }
 

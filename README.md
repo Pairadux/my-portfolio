@@ -5,7 +5,6 @@
 - Svelte
 - SvelteKit
 - Tailwind
-- Anime.js
 - Prettier
 - Typescript
 - Haikei

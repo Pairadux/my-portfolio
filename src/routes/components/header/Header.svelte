@@ -1,7 +1,6 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { fade } from "svelte/transition";
-    import { assets } from "$app/paths";
     import NavItem from "./NavItem.svelte";
     import ThemeToggleButton from "./ThemeToggleButton.svelte";
 
@@ -63,10 +62,6 @@
                         <div
                             class="shadow-frame shadow-frame-strong mx-3 my-3 flex w-full grow flex-col items-center justify-center gap-16 bg-white md:mx-6 md:my-8 dark:bg-black"
                             style="padding-top: max(4rem, env(safe-area-inset-top));">
-                            <!-- <img -->
-                            <!--     src={`${assets}/images/brand-logo/pairadux-logo.svg`} -->
-                            <!--     alt="" -->
-                            <!--     class="h-32 w-32 rounded-full bg-blue-500" /> -->
                             <h1 class="heading-font text-center text-3xl underline decoration-4 underline-offset-2 dark:text-white">Austin Gause</h1>
                             <div class="flex flex-col items-center justify-center gap-16">
                                 {#each navItems as item}

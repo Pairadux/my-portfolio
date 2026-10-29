@@ -16,29 +16,22 @@
     <title>Austin Gause | Page Not Found</title>
 </svelte:head>
 
-<section class="flex flex-col items-center px-8">
+<section class="flex min-h-[calc(100svh-31rem)] flex-col items-center justify-center px-8">
     <div class="w-4/5">
         <SectionHeader>
             {#snippet header()}404{/snippet}
             {#snippet subheader()}This page doesn't exist. Maybe it's still loading.{/snippet}
         </SectionHeader>
     </div>
-    <p class="mt-8 text-center text-lg text-black italic md:text-xl dark:text-white">
-        Content loads slowly<br />
-        Patience is a virtue now<br />
-        Worth the wait, I swear
+    <p class="mt-10 min-h-14 max-w-prose text-center text-lg text-black/60 italic md:text-xl dark:text-white/60">
+        {#if quip}
+            <span in:fade>{quip}</span>
+        {/if}
     </p>
-    <p class="mt-8 text-center text-lg text-black md:text-xl dark:text-white">
+    <p class="mt-10 text-center text-lg text-black md:text-xl dark:text-white">
         Head back <a
             class="text-blue-600 italic underline dark:text-blue-500"
             href="/">home</a
         >.
     </p>
-    {#if quip}
-        <p
-            class="mt-8 max-w-prose text-center text-black/60 dark:text-white/60"
-            in:fade>
-            {quip}
-        </p>
-    {/if}
 </section>

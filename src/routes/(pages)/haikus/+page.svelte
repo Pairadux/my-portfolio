@@ -10,6 +10,10 @@
     let { data }: Props = $props();
 </script>
 
+<svelte:head>
+    <title>Austin Gause | Haikus</title>
+</svelte:head>
+
 <section class="mb-16 flex">
     <ProseArticle>
         <h3 class="text-center dark:text-white">Haikus</h3>

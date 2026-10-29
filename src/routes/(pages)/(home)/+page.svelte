@@ -19,7 +19,7 @@
 </svelte:head>
 
 <div class="flex w-full flex-col items-center">
-    <Hero hero={data.hero} />
+    <Hero home={data.home} />
 
     <hr class="my-16 h-px w-3/4 border-2 border-dashed border-blue-500 dark:border-blue-500" />
 

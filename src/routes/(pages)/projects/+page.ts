@@ -1,9 +1,0 @@
-import { getProjects } from "#lib/sanity/client.js";
-import type { PageLoad } from "./$types";
-
-export const load: PageLoad = async () => {
-    const projects = await getProjects();
-    return {
-        projects,
-    };
-};

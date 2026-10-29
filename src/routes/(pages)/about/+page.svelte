@@ -7,72 +7,31 @@
     }
 
     let { data }: Props = $props();
-    let aboutPage = $derived(data.aboutPage);
-
-    // Check if we have Sanity content or need to show fallback
-    let hasContent = $derived(aboutPage && aboutPage.sections && aboutPage.sections.length > 0);
+    let about = $derived(data.about);
 </script>
 
 <svelte:head>
     <title>Austin Gause | About</title>
     <meta
         name="description"
-        content={aboutPage?.pageTitle || "The Amazing World of Austin"} />
+        content={about.title} />
 </svelte:head>
 
 <section class="mb-16">
     <ProseArticle>
-        {#if hasContent}
-            <h2>{aboutPage.pageTitle}</h2>
+        <h2>{about.title}</h2>
 
-            {#each aboutPage.sections as section}
-                {#if section._type === "headingSection"}
-                    {#if section.level === "h2"}
-                        <h2>{section.text}</h2>
-                    {:else if section.level === "h4"}
-                        <h4>{section.text}</h4>
-                    {:else}
-                        <h3>{section.text}</h3>
-                    {/if}
-                {:else if section._type === "textSection"}
-                    <p>{section.content}</p>
-                {:else if section._type === "imageSection"}
-                    <figure>
-                        <img
-                            src={section.image}
-                            alt={section.alt || ""} />
-                        {#if section.caption}
-                            <figcaption>{section.caption}</figcaption>
-                        {/if}
-                    </figure>
-                {/if}
-            {/each}
+        {@html about.html}
 
-            <p>
-                Feel free to <a
-                    href="/contact"
-                    class="text-blue-500 italic underline">reach out</a>
-                if you'd like to collaborate, chat about tech, or
-                <a
-                    href="https://www.youtube.com/watch?v=jabH3wRwiWQ"
-                    class="text-blue-500 italic underline"
-                    target="_blank">discuss the political and economic state of the world right now.</a>
-            </p>
-        {:else}
-            <h2>About</h2>
-            <hr class="my-16 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
-            <p class="text-black/60 italic dark:text-white/60">Content currently loading... Probably something fascinating about technology, programming, and maybe a hobby or two.</p>
-            <div class="mt-8 space-y-4">
-                <div class="h-24 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"></div>
-                <div
-                    class="h-24 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
-                    style="animation-delay: 150ms">
-                </div>
-                <div
-                    class="h-24 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
-                    style="animation-delay: 300ms">
-                </div>
-            </div>
-        {/if}
+        <p>
+            Feel free to <a
+                href="/contact"
+                class="text-blue-500 italic underline">reach out</a>
+            if you'd like to collaborate, chat about tech, or
+            <a
+                href="https://www.youtube.com/watch?v=jabH3wRwiWQ"
+                class="text-blue-500 italic underline"
+                target="_blank">discuss the political and economic state of the world right now.</a>
+        </p>
     </ProseArticle>
 </section>

@@ -1,20 +1,13 @@
 <script lang="ts">
     import { fly } from "svelte/transition";
     import { onMount, onDestroy } from "svelte";
+    import type { Testimonial } from "#lib/types.js";
 
     interface Props {
-        testimonials?: Array<{
-            _id: string;
-            name: string;
-            position: string;
-            company: string;
-            message: string;
-            image?: string;
-            order: number;
-        }>;
+        testimonials: Testimonial[];
     }
 
-    let { testimonials = [] }: Props = $props();
+    let { testimonials }: Props = $props();
 
     let index = $state(0);
     let currentTestimonial = $derived(testimonials[index]);
@@ -73,85 +66,66 @@
 <section class="relative flex w-full flex-col items-center">
     <i class="fa-solid fa-quote-left mx-auto mb-3 text-5xl text-black dark:text-white"></i>
     <!-- Renders all testimonials invisibly to measure the tallest one -->
-    {#if testimonials.length > 0}
-        <div
-            class="pointer-events-none invisible absolute -z-10 w-4/5"
-            aria-hidden="true">
-            {#each testimonials as testimonial, i}
-                <div bind:clientHeight={testimonialHeights[i]}>
-                    <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold">
-                        <p>"{testimonial.message}"</p>
-                    </blockquote>
-                    <figcaption class="mt-6 flex items-center justify-center space-x-3">
-                        {#if testimonial.image}
-                            <img
-                                class="h-6 w-6 rounded-full object-cover object-center"
-                                src={testimonial.image}
-                                alt="" />
-                        {/if}
-                        <div class="flex items-center divide-x-2">
-                            <div class="pr-3 font-semibold">{testimonial.name}</div>
-                            <div class="pl-3 font-light">{testimonial.position} at {testimonial.company}</div>
-                        </div>
-                    </figcaption>
-                </div>
-            {/each}
-        </div>
-    {/if}
     <div
-        class="relative w-4/5 overflow-hidden {testimonials.length === 0 ? 'h-48' : ''}"
-        style:height={maxHeight > 0 ? `${maxHeight}px` : null}>
-        {#if testimonials.length > 0}
-            {#key currentTestimonial}
-                <figure
-                    class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform"
-                    in:fly={{ x: transitionDirection === "next" ? 300 : -300 }}
-                    out:fly={{ x: transitionDirection === "next" ? -300 : 300 }}>
-                    <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold dark:text-white">
-                        <p>"{currentTestimonial.message}"</p>
-                    </blockquote>
-                    <figcaption class="mt-6 flex items-center justify-center space-x-3">
-                        {#if currentTestimonial.image}
-                            <img
-                                class="h-6 w-6 rounded-full object-cover object-center"
-                                src={currentTestimonial.image}
-                                alt={currentTestimonial.name} />
-                        {/if}
-                        <div class="flex items-center divide-x-2 divide-black dark:divide-white">
-                            <div class="pr-3 font-semibold text-black dark:text-white">{currentTestimonial.name}</div>
-                            <div class="pl-3 font-light text-black/75 dark:text-white/75">{currentTestimonial.position} at {currentTestimonial.company}</div>
-                        </div>
-                    </figcaption>
-                </figure>
-            {/key}
-        {:else}
-            <div class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform">
-                <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold text-black/60 italic dark:text-white/60">
-                    <p>"People usually say nice things here. Trust me, they're very nice things."</p>
+        class="pointer-events-none invisible absolute -z-10 w-4/5"
+        aria-hidden="true">
+        {#each testimonials as testimonial, i}
+            <div bind:clientHeight={testimonialHeights[i]}>
+                <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold">
+                    <p>"{testimonial.message}"</p>
                 </blockquote>
-                <figcaption class="mt-6 flex items-center justify-center">
-                    <div class="text-sm text-black/50 dark:text-white/50">(Loading testimonials...)</div>
+                <figcaption class="mt-6 flex items-center justify-center space-x-3">
+                    {#if testimonial.image}
+                        <enhanced:img
+                            class="h-6 w-6 rounded-full object-cover object-center"
+                            src={testimonial.image}
+                            sizes="24px"
+                            alt="" />
+                    {/if}
+                    <div class="flex items-center divide-x-2">
+                        <div class="pr-3 font-semibold">{testimonial.name}</div>
+                        <div class="pl-3 font-light">{testimonial.position} at {testimonial.company}</div>
+                    </div>
                 </figcaption>
             </div>
-        {/if}
+        {/each}
+    </div>
+    <div
+        class="relative w-4/5 overflow-hidden"
+        style:height={maxHeight > 0 ? `${maxHeight}px` : null}>
+        {#key currentTestimonial}
+            <figure
+                class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform"
+                in:fly={{ x: transitionDirection === "next" ? 300 : -300 }}
+                out:fly={{ x: transitionDirection === "next" ? -300 : 300 }}>
+                <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold dark:text-white">
+                    <p>"{currentTestimonial.message}"</p>
+                </blockquote>
+                <figcaption class="mt-6 flex items-center justify-center space-x-3">
+                    {#if currentTestimonial.image}
+                        <enhanced:img
+                            class="h-6 w-6 rounded-full object-cover object-center"
+                            src={currentTestimonial.image}
+                            sizes="24px"
+                            alt={currentTestimonial.name} />
+                    {/if}
+                    <div class="flex items-center divide-x-2 divide-black dark:divide-white">
+                        <div class="pr-3 font-semibold text-black dark:text-white">{currentTestimonial.name}</div>
+                        <div class="pl-3 font-light text-black/75 dark:text-white/75">{currentTestimonial.position} at {currentTestimonial.company}</div>
+                    </div>
+                </figcaption>
+            </figure>
+        {/key}
     </div>
     <div class="flex items-center gap-8 pt-6 text-2xl text-black dark:text-white">
-        <button
-            onclick={prevTestimonial}
-            disabled={testimonials.length === 0}><i class="fa-solid fa-backward"></i></button>
+        <button onclick={prevTestimonial}><i class="fa-solid fa-backward"></i></button>
         <div class="w-6 text-center">
             {#if intervalPaused}
-                <button
-                    onclick={toggleInterval}
-                    disabled={testimonials.length === 0}><i class="fa-solid fa-play"></i></button>
+                <button onclick={toggleInterval}><i class="fa-solid fa-play"></i></button>
             {:else}
-                <button
-                    onclick={toggleInterval}
-                    disabled={testimonials.length === 0}><i class="fa-solid fa-pause"></i></button>
+                <button onclick={toggleInterval}><i class="fa-solid fa-pause"></i></button>
             {/if}
         </div>
-        <button
-            onclick={nextTestimonial}
-            disabled={testimonials.length === 0}><i class="fa-solid fa-forward"></i></button>
+        <button onclick={nextTestimonial}><i class="fa-solid fa-forward"></i></button>
     </div>
 </section>

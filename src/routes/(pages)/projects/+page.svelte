@@ -28,24 +28,8 @@
 
     <!-- PORTFOLIO ITEMS CONTAINER -->
     <div class="mt-8 mb-16 flex flex-col gap-8 lg:grid lg:grid-cols-3">
-        {#if projects.length > 0}
-            {#each projects as project}
-                <ProjectItem
-                    title={project.title}
-                    description={project.description}
-                    image={project.image}
-                    slug={project.slug} />
-            {/each}
-        {:else}
-            <div class="mx-auto h-72 w-72 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"></div>
-            <div
-                class="mx-auto h-72 w-72 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
-                style="animation-delay: 150ms">
-            </div>
-            <div
-                class="mx-auto h-72 w-72 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
-                style="animation-delay: 300ms">
-            </div>
-        {/if}
+        {#each projects as project}
+            <ProjectItem {project} />
+        {/each}
     </div>
 </section>

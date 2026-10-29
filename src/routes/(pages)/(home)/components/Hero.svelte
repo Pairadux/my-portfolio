@@ -1,14 +1,12 @@
 <script lang="ts">
     import SectionHeader from "#lib/util/SectionHeader.svelte";
+    import type { Home } from "#lib/types.js";
 
     interface Props {
-        hero?: {
-            introduction: string;
-            headshotImage?: string;
-        } | null;
+        home: Home;
     }
 
-    let { hero = null }: Props = $props();
+    let { home }: Props = $props();
 
     const greeting = 'Hi, I\'m <span class="text-blue-500">Austin</span>';
 </script>
@@ -19,29 +17,22 @@
             {#snippet header()}{@html greeting} &#128075{/snippet}
 
             {#snippet subheader()}
-                {#if hero?.introduction}
-                    {hero.introduction}
-                    <span>
-                        <a
-                            class="text-blue-500 italic underline"
-                            href="/about">about page</a
-                        ></span
-                    >.
-                {:else}
-                    <span class="text-black/60 italic dark:text-white/60"> Imagine the most fascinating introduction you've ever read. This is probably better than that. (Content loading...) </span>
-                {/if}
+                {home.introduction}
+                <span>
+                    <a
+                        class="text-blue-500 italic underline"
+                        href="/about">about page</a
+                    ></span
+                >.
             {/snippet}
         </SectionHeader>
     </div>
 
-    {#if hero?.headshotImage}
-        <div class="shadow-inner-sunken z-10 h-80 w-80 rounded-full">
-            <img
-                src={hero.headshotImage}
-                class="h-80 w-80 rounded-full object-cover"
-                alt="Austin Gause headshot" />
-        </div>
-    {:else}
-        <div class="z-10 h-80 w-80 animate-pulse rounded-full border-4 border-blue-500/40 bg-blue-500/20 dark:bg-blue-500/30"></div>
-    {/if}
+    <div class="shadow-inner-sunken z-10 h-80 w-80 rounded-full">
+        <enhanced:img
+            src={home.headshot}
+            sizes="320px"
+            class="h-80 w-80 rounded-full object-cover"
+            alt="Austin Gause headshot" />
+    </div>
 </section>

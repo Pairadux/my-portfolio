@@ -1,19 +1,13 @@
 <script lang="ts">
     import ProjectItem from "#lib/util/ProjectItem.svelte";
     import SectionHeader from "#lib/util/SectionHeader.svelte";
+    import type { ProjectSummary } from "#lib/types.js";
 
     interface Props {
-        projects?: Array<{
-            _id: string;
-            title: string;
-            description: string;
-            slug: string;
-            image: string;
-            featured: boolean;
-        }>;
+        projects: ProjectSummary[];
     }
 
-    let { projects = [] }: Props = $props();
+    let { projects }: Props = $props();
 </script>
 
 <!-- PORTFOLIO SECTION -->
@@ -35,29 +29,8 @@
 
     <!-- PORTFOLIO ITEMS CONTAINER -->
     <div class="mt-8 flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
-        {#if projects.length > 0}
-            {#each projects as project}
-                <ProjectItem
-                    title={project.title}
-                    description={project.description}
-                    image={project.image}
-                    slug={project.slug} />
-            {/each}
-        {:else}
-            <div class="col-span-3 text-center">
-                <p class="mb-8 text-black/60 italic dark:text-white/60">Projects loading... They're really impressive, I promise. Like, award-winning impressive. (Disclaimer: Awards may be self-awarded)</p>
-                <div class="flex flex-col gap-8 md:grid md:grid-cols-2 lg:grid-cols-3">
-                    <div class="mx-auto h-72 w-72 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"></div>
-                    <div
-                        class="mx-auto h-72 w-72 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
-                        style="animation-delay: 150ms">
-                    </div>
-                    <div
-                        class="mx-auto h-72 w-72 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
-                        style="animation-delay: 300ms">
-                    </div>
-                </div>
-            </div>
-        {/if}
+        {#each projects as project}
+            <ProjectItem {project} />
+        {/each}
     </div>
 </section>

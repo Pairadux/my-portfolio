@@ -3,7 +3,7 @@
     import { fade } from "svelte/transition";
     import SectionHeader from "#lib/util/SectionHeader.svelte";
 
-    const quips = ["It's probably still downloading from the cloud... the very slow, very dramatic cloud.", "Whatever was here was really impressive, I promise. Like, award-winning impressive. (Disclaimer: Awards may be self-awarded)", "Imagine the most fascinating page you've ever read. This was probably better than that.", "In the meantime, know that I'm definitely qualified for things."];
+    const quips = ["It's probably still downloading from the cloud... the very slow, very dramatic cloud.", "Imagine the most fascinating page you've ever read. This was probably better than that.", "In the meantime, know that I'm definitely qualified for things.", "ls: cannot access 'this-page': No such file or directory", "It worked on my machine.", "Even grep couldn't find it.", "Somewhere, a link is very confidently pointing here."];
 
     let quip = $state<string>();
 
@@ -16,7 +16,7 @@
     <title>Austin Gause | Page Not Found</title>
 </svelte:head>
 
-<section class="flex min-h-[calc(100svh-31rem)] flex-col items-center justify-center px-8">
+<section class="fill-page flex grow flex-col items-center justify-center px-8">
     <div class="w-4/5">
         <SectionHeader>
             {#snippet header()}404{/snippet}

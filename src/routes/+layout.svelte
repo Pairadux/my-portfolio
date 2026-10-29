@@ -17,9 +17,9 @@
     let isHome = $derived(page.route.id === "/(pages)/(home)");
 </script>
 
-<div class="px-3 py-3 transition-colors md:px-6 md:py-8">
-    <div class="{isHome ? '' : 'shadow-frame shadow-frame-strong'} box-border bg-white dark:bg-black">
-        <div class="{isHome ? 'shadow-frame shadow-frame-strong' : ''} relative">
+<div class="px-3 py-3 transition-colors has-[.fill-page]:flex has-[.fill-page]:min-h-svh has-[.fill-page]:flex-col md:px-6 md:py-8">
+    <div class="{isHome ? '' : 'shadow-frame shadow-frame-strong'} box-border bg-white has-[.fill-page]:flex has-[.fill-page]:grow has-[.fill-page]:flex-col dark:bg-black">
+        <div class="{isHome ? 'shadow-frame shadow-frame-strong' : ''} relative has-[.fill-page]:flex has-[.fill-page]:grow has-[.fill-page]:flex-col">
             <Header />
             {@render children?.()}
             <!-- PSUEDO-PADDING -->

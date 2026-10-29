@@ -13,8 +13,8 @@
         "watch": "npx tailwindcss -i ./input.css -o ./static/css/output.css --watch"
     },
     "devDependencies": {
-        "@sveltejs/adapter-static": "^3.0.10",
-        "@sveltejs/kit": "^2.70.3",
+        "@sveltejs/adapter-static": "^4.0.0",
+        "@sveltejs/kit": "^3.0.0",
         "@sveltejs/vite-plugin-svelte": "^7.3.1",
         "@tailwindcss/forms": "^0.5.10",
         "@tailwindcss/typography": "^0.5.10",
@@ -32,5 +32,8 @@
     "type": "module",
     "dependencies": {
         "@sanity/client": "^7.12.0"
+    },
+    "imports": {
+        "#lib/*": "./src/lib/*"
     }
 }

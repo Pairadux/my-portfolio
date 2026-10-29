@@ -1,5 +1,5 @@
 <script lang="ts">
-    import SectionHeader from "$lib/util/SectionHeader.svelte";
+    import SectionHeader from "#lib/util/SectionHeader.svelte";
 
     interface Props {
         hero?: {

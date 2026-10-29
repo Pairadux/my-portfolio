@@ -1,6 +1,6 @@
 <script lang="ts">
-    import ProjectItem from "$lib/util/ProjectItem.svelte";
-    import SectionHeader from "$lib/util/SectionHeader.svelte";
+    import ProjectItem from "#lib/util/ProjectItem.svelte";
+    import SectionHeader from "#lib/util/SectionHeader.svelte";
     import type { PageData } from "./$types";
 
     interface Props {

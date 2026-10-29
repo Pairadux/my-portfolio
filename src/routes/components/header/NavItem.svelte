@@ -1,5 +1,6 @@
 <script lang="ts">
-    import { page } from "$app/stores";
+    import { page } from "$app/state";
+
     interface Props {
         href: string;
         label: string;
@@ -8,7 +9,7 @@
 
     let { href, label, classes }: Props = $props();
 
-    let isActive = $derived(href === "/" ? $page.url.pathname === href : $page.url.pathname.startsWith(href));
+    let isActive = $derived(href === "/" ? page.url.pathname === href : page.url.pathname.startsWith(href));
 </script>
 
 <a

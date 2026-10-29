@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { page } from "$app/stores";
-    import { darkMode } from "$lib/libStore";
+    import { page } from "$app/state";
+    import { darkMode } from "#lib/libStore.js";
     import Header from "./components/header/Header.svelte";
     import Footer from "./components/Footer.svelte";
     import Testimonials from "./components/Testimonials.svelte";
@@ -14,7 +14,7 @@
 
     let { data, children }: Props = $props();
 
-    let isHome = $derived($page.route.id === "/(pages)/(home)");
+    let isHome = $derived(page.route.id === "/(pages)/(home)");
 </script>
 
 <div class="px-3 py-3 transition-colors md:px-6 md:py-8 {$darkMode ? 'dark' : ''}">

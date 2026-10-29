@@ -1,4 +1,4 @@
-import { getSocialLinks, getTestimonials } from "$lib/sanity/client";
+import { getSocialLinks, getTestimonials } from "#lib/sanity/client.js";
 import type { LayoutLoad } from "./$types";
 
 export const prerender = true;

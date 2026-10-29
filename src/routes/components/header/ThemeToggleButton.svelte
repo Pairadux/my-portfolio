@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { darkMode } from "$lib/libStore";
+    import { darkMode } from "#lib/libStore.js";
 
     let darkModeToggle = function () {
         darkMode.update((n) => !n);

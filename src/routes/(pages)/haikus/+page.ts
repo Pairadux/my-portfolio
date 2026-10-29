@@ -1,4 +1,4 @@
-import { getHaikus } from "$lib/sanity/client";
+import { getHaikus } from "#lib/sanity/client.js";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async () => {

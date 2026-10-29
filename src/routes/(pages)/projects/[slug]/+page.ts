@@ -1,6 +1,6 @@
 import type { PageLoad } from "./$types";
 import { error } from "@sveltejs/kit";
-import { getProjectBySlug } from "$lib/sanity/client";
+import { getProjectBySlug } from "#lib/sanity/client.js";
 
 export const load: PageLoad = async ({ params }) => {
     const { slug } = params;

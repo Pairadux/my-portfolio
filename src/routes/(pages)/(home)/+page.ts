@@ -1,4 +1,4 @@
-import { getHero, getFeaturedProjects, getSkills } from "$lib/sanity/client";
+import { getHero, getFeaturedProjects, getSkills } from "#lib/sanity/client.js";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async () => {

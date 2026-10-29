@@ -13,10 +13,10 @@
 </script>
 
 <svelte:head>
-    <title>Austin Gause | CS Major & UNIX Enthusiast</title>
+    <title>Austin Gause | Full Stack Developer & UNIX Enthusiast</title>
     <meta
         name="description"
-        content="A computer science major passionate about technology, programming, and language learning, with a focus on web development, command-line tools, and digital organization." />
+        content="Full stack web developer with a B.S. in Computer Science, passionate about UNIX/Linux systems, systems programming, and command line tooling." />
 </svelte:head>
 
 <div class="flex w-full flex-col items-center">

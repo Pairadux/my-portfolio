@@ -53,6 +53,20 @@ html {
     font-style: normal !important;
 }
 
+.prose :where(h1, h2, h3, h4) {
+    font-family: "Fira Code", monospace;
+}
+
+.prose :where(code) {
+    font-family: "Fira Code", monospace;
+    font-weight: 500;
+}
+
+.prose :where(code)::before,
+.prose :where(code)::after {
+    content: none;
+}
+
 .shadow-frame {
     box-shadow:
         0 0 12px 2px rgb(0 0 0 / 0.15),

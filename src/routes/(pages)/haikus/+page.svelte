@@ -14,7 +14,7 @@
     <title>Austin Gause | Haikus</title>
 </svelte:head>
 
-<section class="mb-16 flex">
+<section class="flex">
     <ProseArticle>
         <h3 class="text-center dark:text-white">Haikus</h3>
 

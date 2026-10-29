@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Divider from "#lib/util/Divider.svelte";
     import ProseArticle from "#lib/util/ProseArticle.svelte";
 
     const labelClass = "block text-base/7 font-medium text-black dark:text-white";
@@ -12,10 +13,10 @@
         content="Get in touch with Austin Gause." />
 </svelte:head>
 
-<section class="mb-16">
+<section>
     <ProseArticle>
         <h2 class="text-center">Thanks for taking the time to reach out.<br />How can I help?</h2>
-        <hr class="my-16 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
+        <Divider />
         <form
             class="not-prose"
             action="https://formspree.io/f/mkgjjwnw"

@@ -17,7 +17,7 @@
         content={about.title} />
 </svelte:head>
 
-<section class="mb-16">
+<section>
     <ProseArticle>
         <h2>{about.title}</h2>
 

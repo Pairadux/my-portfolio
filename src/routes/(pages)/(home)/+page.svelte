@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Divider from "#lib/util/Divider.svelte";
     import Hero from "./components/Hero.svelte";
     import SkillsContainer from "./components/SkillsContainer.svelte";
     import FeaturedProjects from "./components/FeaturedProjects.svelte";
@@ -21,11 +22,11 @@
 <div class="flex w-full flex-col items-center">
     <Hero home={data.home} />
 
-    <hr class="my-16 h-px w-3/4 border-2 border-dashed border-blue-500 dark:border-blue-500" />
+    <Divider class="w-3/4" />
 
     <SkillsContainer skills={data.skills} />
 
-    <hr class="my-16 h-px w-3/4 border-2 border-dashed border-blue-500 dark:border-blue-500" />
+    <Divider class="w-3/4" />
 
     <FeaturedProjects projects={data.featuredProjects} />
 </div>

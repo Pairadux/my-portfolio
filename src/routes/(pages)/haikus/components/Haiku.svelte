@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Divider from "#lib/util/Divider.svelte";
     import type { Snippet } from "svelte";
 
     interface Props {
@@ -15,4 +16,4 @@
 <p class="">
     {@render lines()}
 </p>
-<hr class="my-16 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
+<Divider />

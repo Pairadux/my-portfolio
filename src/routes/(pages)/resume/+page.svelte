@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Divider from "#lib/util/Divider.svelte";
     import ProseArticle from "#lib/util/ProseArticle.svelte";
     import type { PageData } from "./$types";
 
@@ -19,7 +20,7 @@
         content={resume.summary.substring(0, 160)} />
 </svelte:head>
 
-<section class="mb-16 flex">
+<section class="flex">
     <ProseArticle>
         <!-- SUMMARY -->
         <h3 class="text-center dark:text-white">Summary</h3>
@@ -106,7 +107,7 @@
 
         <!-- FOOTNOTES -->
         {#if resume.footnotes}
-            <hr class="my-8 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
+            <Divider />
             <p class="text-sm">{resume.footnotes}</p>
         {/if}
     </ProseArticle>

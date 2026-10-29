@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Divider from "#lib/util/Divider.svelte";
     import Icon from "#lib/util/Icon.svelte";
     import ProseArticle from "#lib/util/ProseArticle.svelte";
     import type { PageData } from "./$types";
@@ -18,7 +19,7 @@
         content={project.description} />
 </svelte:head>
 
-<section class="mb-16">
+<section>
     <ProseArticle>
         <h1>{project.title}</h1>
 
@@ -61,7 +62,7 @@
                 alt={project.title} />
         </figure>
 
-        <hr class="my-8 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
+        <Divider />
 
         {@html project.html}
     </ProseArticle>

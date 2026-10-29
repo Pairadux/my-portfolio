@@ -1,7 +1,6 @@
 <script lang="ts">
     import "../app.css";
     import { page } from "$app/state";
-    import { darkMode } from "#lib/libStore.js";
     import Header from "./components/header/Header.svelte";
     import Footer from "./components/Footer.svelte";
     import Testimonials from "./components/Testimonials.svelte";
@@ -18,7 +17,7 @@
     let isHome = $derived(page.route.id === "/(pages)/(home)");
 </script>
 
-<div class="px-3 py-3 transition-colors md:px-6 md:py-8 {$darkMode ? 'dark' : ''}">
+<div class="px-3 py-3 transition-colors md:px-6 md:py-8">
     <div class="{isHome ? '' : 'shadow-frame shadow-frame-strong'} box-border bg-white dark:bg-black">
         <div class="{isHome ? 'shadow-frame shadow-frame-strong' : ''} relative">
             <Header />

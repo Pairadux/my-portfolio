@@ -1,6 +1,6 @@
 <script lang="ts">
     import { fly } from "svelte/transition";
-    import { onMount, onDestroy } from "svelte";
+    import Icon from "#lib/util/Icon.svelte";
     import type { Testimonial } from "#lib/types.js";
 
     interface Props {
@@ -9,123 +9,103 @@
 
     let { testimonials }: Props = $props();
 
-    let index = $state(0);
-    let currentTestimonial = $derived(testimonials[index]);
-    let transitionDirection = $state("next");
-    let interval: number;
-    let intervalPaused = $state(false);
     const AUTO_ADVANCE_DURATION = 5000;
 
-    let testimonialHeights: number[] = $state([]);
-    let maxHeight = $derived(testimonialHeights.length > 0 ? Math.max(...testimonialHeights) : 0);
+    let index = $state(0);
+    let direction = $state(1);
+    let paused = $state(false);
 
-    function resetInterval() {
-        if (interval) {
-            clearInterval(interval);
-        }
-
-        if (!intervalPaused && testimonials.length > 0) {
-            interval = setInterval(nextTestimonial, AUTO_ADVANCE_DURATION);
-        }
+    function show(next: number, dir: number) {
+        direction = dir;
+        index = (next + testimonials.length) % testimonials.length;
     }
 
-    function prevTestimonial() {
-        transitionDirection = "prev";
-        index = index > 0 ? index - 1 : testimonials.length - 1;
-        currentTestimonial = testimonials[index];
-        resetInterval();
-    }
-
-    function nextTestimonial() {
-        transitionDirection = "next";
-        index = index < testimonials.length - 1 ? index + 1 : 0;
-        currentTestimonial = testimonials[index];
-        resetInterval();
-    }
-
-    function toggleInterval() {
-        intervalPaused = !intervalPaused;
-
-        if (intervalPaused) {
-            clearInterval(interval);
-        } else {
-            resetInterval();
-        }
-    }
-
-    onMount(() => {
-        if (testimonials.length > 0) {
-            interval = setInterval(nextTestimonial, AUTO_ADVANCE_DURATION);
-        }
-    });
-    onDestroy(() => {
-        clearInterval(interval);
+    // Restarts the timer whenever the current testimonial changes
+    $effect(() => {
+        const current = index;
+        if (paused || testimonials.length < 2 || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        const timer = setInterval(() => show(current + 1, 1), AUTO_ADVANCE_DURATION);
+        return () => clearInterval(timer);
     });
 </script>
 
-<section class="relative flex w-full flex-col items-center">
-    <i class="fa-solid fa-quote-left mx-auto mb-3 text-5xl text-black dark:text-white"></i>
-    <!-- Renders all testimonials invisibly to measure the tallest one -->
-    <div
-        class="pointer-events-none invisible absolute -z-10 w-4/5"
-        aria-hidden="true">
-        {#each testimonials as testimonial, i}
-            <div bind:clientHeight={testimonialHeights[i]}>
-                <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold">
-                    <p>"{testimonial.message}"</p>
-                </blockquote>
-                <figcaption class="mt-6 flex items-center justify-center space-x-3">
-                    {#if testimonial.image}
-                        <enhanced:img
-                            class="h-6 w-6 rounded-full object-cover object-center"
-                            src={testimonial.image}
-                            sizes="24px"
-                            alt="" />
-                    {/if}
-                    <div class="flex items-center divide-x-2">
-                        <div class="pr-3 font-semibold">{testimonial.name}</div>
-                        <div class="pl-3 font-light">{testimonial.position} at {testimonial.company}</div>
-                    </div>
-                </figcaption>
+{#snippet quote(testimonial: Testimonial)}
+    <figure>
+        <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold text-black dark:text-white">
+            <p>"{testimonial.message}"</p>
+        </blockquote>
+        <figcaption class="mt-6 flex items-center justify-center space-x-3">
+            {#if testimonial.image}
+                <enhanced:img
+                    class="h-6 w-6 rounded-full object-cover object-center"
+                    src={testimonial.image}
+                    sizes="24px"
+                    alt={testimonial.name} />
+            {/if}
+            <div class="flex items-center divide-x-2 divide-black dark:divide-white">
+                <div class="pr-3 font-semibold text-black dark:text-white">{testimonial.name}</div>
+                <div class="pl-3 font-light text-black/75 dark:text-white/75">{testimonial.position} at {testimonial.company}</div>
+            </div>
+        </figcaption>
+    </figure>
+{/snippet}
+
+<section
+    class="relative flex w-full flex-col items-center"
+    aria-label="Testimonials"
+    onmouseenter={() => (paused = true)}
+    onmouseleave={() => (paused = false)}
+    onfocusin={() => (paused = true)}
+    onfocusout={() => (paused = false)}>
+    <Icon
+        name="quote-left"
+        class="mx-auto mb-3 h-12 text-black dark:text-white" />
+    <!-- Every testimonial shares one grid cell, so the box is always as tall as the longest -->
+    <div class="grid w-4/5 overflow-hidden">
+        {#each testimonials as testimonial}
+            <div
+                class="invisible col-start-1 row-start-1 self-center"
+                aria-hidden="true">
+                {@render quote(testimonial)}
             </div>
         {/each}
-    </div>
-    <div
-        class="relative w-4/5 overflow-hidden"
-        style:height={maxHeight > 0 ? `${maxHeight}px` : null}>
-        {#key currentTestimonial}
-            <figure
-                class="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2 transform"
-                in:fly={{ x: transitionDirection === "next" ? 300 : -300 }}
-                out:fly={{ x: transitionDirection === "next" ? -300 : 300 }}>
-                <blockquote class="flex items-center justify-center text-center text-xl/8 font-semibold dark:text-white">
-                    <p>"{currentTestimonial.message}"</p>
-                </blockquote>
-                <figcaption class="mt-6 flex items-center justify-center space-x-3">
-                    {#if currentTestimonial.image}
-                        <enhanced:img
-                            class="h-6 w-6 rounded-full object-cover object-center"
-                            src={currentTestimonial.image}
-                            sizes="24px"
-                            alt={currentTestimonial.name} />
-                    {/if}
-                    <div class="flex items-center divide-x-2 divide-black dark:divide-white">
-                        <div class="pr-3 font-semibold text-black dark:text-white">{currentTestimonial.name}</div>
-                        <div class="pl-3 font-light text-black/75 dark:text-white/75">{currentTestimonial.position} at {currentTestimonial.company}</div>
-                    </div>
-                </figcaption>
-            </figure>
+        {#key index}
+            <div
+                class="col-start-1 row-start-1 self-center"
+                in:fly={{ x: 300 * direction }}
+                out:fly={{ x: -300 * direction }}>
+                {@render quote(testimonials[index])}
+            </div>
         {/key}
     </div>
-    <div class="flex items-center gap-8 pt-6 text-2xl text-black dark:text-white">
-        <button onclick={prevTestimonial}><i class="fa-solid fa-backward"></i></button>
-        <div class="w-6 text-center">
-            {#if intervalPaused}
-                <button onclick={toggleInterval}><i class="fa-solid fa-play"></i></button>
-            {:else}
-                <button onclick={toggleInterval}><i class="fa-solid fa-pause"></i></button>
-            {/if}
+    {#if testimonials.length > 1}
+        <div class="flex items-center gap-6 pt-6 text-black dark:text-white">
+            <button
+                type="button"
+                aria-label="Previous testimonial"
+                onclick={() => show(index - 1, -1)}>
+                <Icon
+                    name="chevron-left"
+                    class="h-5" />
+            </button>
+            <div class="flex gap-2">
+                {#each testimonials as testimonial, i}
+                    <button
+                        type="button"
+                        class="h-2.5 w-2.5 rounded-full {i === index ? 'bg-blue-500' : 'bg-black/25 dark:bg-white/25'}"
+                        aria-label="Show testimonial from {testimonial.name}"
+                        aria-current={i === index}
+                        onclick={() => show(i, i < index ? -1 : 1)}></button>
+                {/each}
+            </div>
+            <button
+                type="button"
+                aria-label="Next testimonial"
+                onclick={() => show(index + 1, 1)}>
+                <Icon
+                    name="chevron-right"
+                    class="h-5" />
+            </button>
         </div>
-        <button onclick={nextTestimonial}><i class="fa-solid fa-forward"></i></button>
-    </div>
+    {/if}
 </section>

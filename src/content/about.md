@@ -2,7 +2,7 @@
 title: Hey, I'm Austin
 ---
 
-Most people open a terminal when they have to. I prefer to just stay in it. My setup of choice is Arch Linux running Hyprland, with Neovim for editing, tmux for session management, and a growing collection of tools I've built to smooth out the rough edges. I graduated from Valdosta State University in May 2026 and now work as a computer scientist. Outside of work, most of my time goes into writing Go for problems that sit close to the metal, with some C when the job calls for it.
+Most people open a terminal when they have to. I prefer to just stay in it. My setup of choice is Arch Linux running Hyprland, with Neovim for editing, tmux for session management, and a growing collection of tools I've built to smooth out the rough edges. I graduated from Valdosta State University in May 2026 and now work as a full stack developer. Outside of work, most of my time goes into writing Go for problems that sit close to the metal, with some C when the job calls for it.
 
 ![A Neovim instance launched inside of a tmux instance with a Tokyo Night colorscheme and a dashboard open with the text "Pairadux" in "bloody" font and several quick hotkeys listed below.](images/about/neovim.png "Where the work happens. Neovim, tmux, and whatever I'm building this week.")
 

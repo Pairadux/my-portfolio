@@ -30,7 +30,7 @@
     </p>
     <p class="mt-8 text-center text-lg text-black md:text-xl dark:text-white">
         Head back <a
-            class="text-blue-500 italic underline"
+            class="text-blue-600 italic underline dark:text-blue-500"
             href="/">home</a
         >.
     </p>

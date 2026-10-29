@@ -26,11 +26,11 @@
         <p>
             Feel free to <a
                 href="/contact"
-                class="text-blue-500 italic underline">reach out</a>
+                class="text-blue-600 italic underline dark:text-blue-500">reach out</a>
             if you'd like to collaborate, chat about tech, or
             <a
                 href="https://www.youtube.com/watch?v=jabH3wRwiWQ"
-                class="text-blue-500 italic underline"
+                class="text-blue-600 italic underline dark:text-blue-500"
                 target="_blank">discuss the political and economic state of the world right now.</a>
         </p>
     </ProseArticle>

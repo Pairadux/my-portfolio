@@ -20,7 +20,7 @@
                 {home.introduction}
                 <span>
                     <a
-                        class="text-blue-500 italic underline"
+                        class="text-blue-600 italic underline dark:text-blue-500"
                         href="/about">about page</a
                     ></span
                 >.

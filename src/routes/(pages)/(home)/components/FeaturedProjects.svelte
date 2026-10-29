@@ -20,7 +20,7 @@
                 A few of my most recent projects. Want to see more? Check out my
                 <span
                     ><a
-                        class="text-blue-500 italic underline"
+                        class="text-blue-600 italic underline dark:text-blue-500"
                         href="/projects">projects</a
                     ></span> page.
             {/snippet}

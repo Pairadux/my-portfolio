@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Icon from "#lib/util/Icon.svelte";
     import ProseArticle from "#lib/util/ProseArticle.svelte";
     import type { PageData } from "./$types";
 
@@ -21,33 +22,44 @@
     <ProseArticle>
         <h1>{project.title}</h1>
 
-        <figure>
-            <enhanced:img
-                src={project.image}
-                sizes="(min-width: 768px) 768px, 100vw"
-                alt={project.title} />
-        </figure>
-
         <p class="text-lg">{project.description}</p>
 
         {#if project.liveUrl || project.githubUrl}
-            <div class="my-4 flex gap-4">
+            <div class="not-prose my-6 flex flex-wrap gap-4">
                 {#if project.liveUrl}
                     <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-blue-500 underline">Live Demo</a>
+                        class="inline-flex items-center gap-2 px-3 py-1.5 font-semibold text-blue-600 shadow-lg ring-2 ring-blue-500 transition-colors hover:bg-blue-500 hover:text-white dark:text-blue-500 dark:hover:text-white">
+                        <Icon
+                            name="external-link"
+                            class="h-4 w-4" />
+                        Live Demo
+                    </a>
                 {/if}
                 {#if project.githubUrl}
                     <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        class="text-blue-500 underline">GitHub</a>
+                        class="inline-flex items-center gap-2 px-3 py-1.5 font-semibold text-blue-600 shadow-lg ring-2 ring-blue-500 transition-colors hover:bg-blue-500 hover:text-white dark:text-blue-500 dark:hover:text-white">
+                        <Icon
+                            name="github"
+                            class="h-4 w-4" />
+                        GitHub
+                    </a>
                 {/if}
             </div>
         {/if}
+
+        <figure>
+            <enhanced:img
+                class="mx-auto max-h-[32rem] w-auto"
+                src={project.image}
+                sizes="(min-width: 768px) 768px, 100vw"
+                alt={project.title} />
+        </figure>
 
         <hr class="my-8 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
 

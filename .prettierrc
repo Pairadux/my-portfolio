@@ -1,13 +1,11 @@
 {
-    "plugins": [
-      "prettier-plugin-svelte",
-      "prettier-plugin-tailwindcss"
-    ],
+    "plugins": ["prettier-plugin-svelte", "prettier-plugin-tailwindcss"],
     "overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }],
     "svelteBracketNewLine": false,
     "bracketSameLine": true,
     "tabWidth": 4,
     "bracketSpacing": true,
     "singleAttributePerLine": true,
-    "printWidth": 3000
+    "printWidth": 3000,
+    "tailwindStylesheet": "./src/app.css"
 }

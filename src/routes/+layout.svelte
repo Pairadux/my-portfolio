@@ -1,4 +1,5 @@
 <script lang="ts">
+    import "../app.css";
     import { page } from "$app/state";
     import { darkMode } from "#lib/libStore.js";
     import Header from "./components/header/Header.svelte";

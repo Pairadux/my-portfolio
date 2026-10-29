@@ -37,13 +37,13 @@
                     slug={project.slug} />
             {/each}
         {:else}
-            <div class="mx-auto h-72 w-72 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"></div>
+            <div class="mx-auto h-72 w-72 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"></div>
             <div
-                class="mx-auto h-72 w-72 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                class="mx-auto h-72 w-72 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
                 style="animation-delay: 150ms">
             </div>
             <div
-                class="mx-auto h-72 w-72 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                class="mx-auto h-72 w-72 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
                 style="animation-delay: 300ms">
             </div>
         {/if}

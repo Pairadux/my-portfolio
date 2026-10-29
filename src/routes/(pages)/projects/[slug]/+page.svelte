@@ -50,7 +50,7 @@
             </div>
         {/if}
 
-        <hr class="my-8 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
+        <hr class="my-8 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
 
         {#if project.overview}
             <h2>Overview</h2>

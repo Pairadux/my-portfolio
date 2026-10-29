@@ -59,21 +59,21 @@
         </div>
     {:else}
         <div class="mt-8 flex justify-center gap-4">
-            <div class="h-12 w-12 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"></div>
+            <div class="h-12 w-12 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"></div>
             <div
-                class="h-12 w-12 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                class="h-12 w-12 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
                 style="animation-delay: 100ms">
             </div>
             <div
-                class="h-12 w-12 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                class="h-12 w-12 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
                 style="animation-delay: 200ms">
             </div>
             <div
-                class="h-12 w-12 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                class="h-12 w-12 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
                 style="animation-delay: 300ms">
             </div>
             <div
-                class="h-12 w-12 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                class="h-12 w-12 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
                 style="animation-delay: 400ms">
             </div>
         </div>

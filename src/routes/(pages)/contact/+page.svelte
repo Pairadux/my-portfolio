@@ -12,7 +12,7 @@
 <section class="mb-16">
     <ProseArticle>
         <h2 class="text-center">Thanks for taking the time to reach out.<br />How can I help?</h2>
-        <hr class="my-16 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
+        <hr class="my-16 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
         <form
             class="not-prose"
             action="https://formspree.io/f/mkgjjwnw"
@@ -31,7 +31,7 @@
                                     id="first-name"
                                     autocomplete="given-name"
                                     placeholder="John"
-                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6 dark:bg-black dark:text-white dark:outline-gray-600 dark:placeholder:text-gray-600" />
+                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline-solid outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-solid focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6 dark:bg-black dark:text-white dark:outline-gray-600 dark:placeholder:text-gray-600" />
                             </div>
                         </div>
 
@@ -46,7 +46,7 @@
                                     id="last-name"
                                     autocomplete="family-name"
                                     placeholder="Smith"
-                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6 dark:bg-black dark:text-white dark:outline-gray-600 dark:placeholder:text-gray-600" />
+                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline-solid outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-solid focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6 dark:bg-black dark:text-white dark:outline-gray-600 dark:placeholder:text-gray-600" />
                             </div>
                         </div>
 
@@ -61,7 +61,7 @@
                                     type="email"
                                     autocomplete="email"
                                     placeholder="johnsmith@email.com"
-                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6 dark:bg-black dark:text-white dark:outline-gray-600 dark:placeholder:text-gray-600" />
+                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline-solid outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-solid focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6 dark:bg-black dark:text-white dark:outline-gray-600 dark:placeholder:text-gray-600" />
                             </div>
                         </div>
 
@@ -75,20 +75,20 @@
                                     id="message"
                                     rows="8"
                                     placeholder="Here is where you scream"
-                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6 dark:bg-black dark:text-white dark:outline-gray-600 dark:placeholder:text-gray-600"></textarea>
+                                    class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-black outline-solid outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-solid focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 sm:text-sm/6 dark:bg-black dark:text-white dark:outline-gray-600 dark:placeholder:text-gray-600"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <hr class="my-16 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
+            <hr class="my-16 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
             <div class="mt-6 flex items-center justify-end gap-x-6">
                 <button
                     type="button"
                     class="text-sm/6 font-semibold text-black dark:text-white">Cancel</button>
                 <button
                     type="submit"
-                    class="rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">Submit</button>
+                    class="rounded-md bg-blue-500 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-solid focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">Submit</button>
             </div>
         </form>
     </ProseArticle>

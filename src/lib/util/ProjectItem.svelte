@@ -13,7 +13,7 @@
     href="/projects/{slug}"
     class="no-underline">
     <div class="group relative h-72 w-72 transition-transform hover:-translate-x-1 hover:-translate-y-1 hover:transform">
-        <div class="absolute left-2 top-2 h-[95%] w-[95%] outline-dashed outline-[4px] outline-offset-2 outline-blue-500 transition-all group-hover:left-4 group-hover:top-4"></div>
+        <div class="absolute left-2 top-2 h-[95%] w-[95%] outline-dashed outline-4 outline-offset-2 outline-blue-500 transition-all group-hover:left-4 group-hover:top-4"></div>
 
         <!-- PORTFOLIO ITEMS -->
         <div class="shadow-frame relative flex h-72 w-72 justify-center border-[1.5px] border-blue-500 bg-white">

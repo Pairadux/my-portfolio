@@ -34,11 +34,11 @@
                     Worth the wait, I swear
                 </p>
             </div>
-            <hr class="my-16 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
+            <hr class="my-16 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
             <div class="mt-6 space-y-4">
-                <div class="h-24 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"></div>
+                <div class="h-24 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"></div>
                 <div
-                    class="h-24 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                    class="h-24 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
                     style="animation-delay: 150ms">
                 </div>
             </div>

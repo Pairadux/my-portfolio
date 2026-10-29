@@ -21,11 +21,11 @@
 <div class="flex w-full flex-col items-center">
     <Hero hero={data.hero} />
 
-    <hr class="my-16 h-px w-3/4 border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
+    <hr class="my-16 h-px w-3/4 border-2 border-dashed border-blue-500 dark:border-blue-500" />
 
     <SkillsContainer skills={data.skills} />
 
-    <hr class="my-16 h-px w-3/4 border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
+    <hr class="my-16 h-px w-3/4 border-2 border-dashed border-blue-500 dark:border-blue-500" />
 
     <FeaturedProjects projects={data.featuredProjects} />
 </div>

@@ -97,20 +97,20 @@
 
             <!-- FOOTNOTES -->
             {#if resume.footnotes}
-                <hr class="my-8 h-px border-[2px] border-dashed border-blue-500 dark:border-blue-500" />
+                <hr class="my-8 h-px border-2 border-dashed border-blue-500 dark:border-blue-500" />
                 <p class="text-sm">{resume.footnotes}</p>
             {/if}
         {:else}
             <h3 class="text-center dark:text-white">Resume</h3>
             <p class="mb-8 text-center italic text-black/60 dark:text-white/60">My resume is currently downloading from the cloud... the very slow, very dramatic cloud. In the meantime, know that I'm definitely qualified for things.</p>
             <div class="space-y-6">
-                <div class="h-16 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"></div>
+                <div class="h-16 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"></div>
                 <div
-                    class="h-32 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                    class="h-32 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
                     style="animation-delay: 150ms">
                 </div>
                 <div
-                    class="h-24 animate-pulse rounded bg-blue-500/20 dark:bg-blue-500/30"
+                    class="h-24 animate-pulse rounded-sm bg-blue-500/20 dark:bg-blue-500/30"
                     style="animation-delay: 300ms">
                 </div>
             </div>

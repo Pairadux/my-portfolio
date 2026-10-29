@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Seo from "#lib/util/Seo.svelte";
     import ProseArticle from "#lib/util/ProseArticle.svelte";
     import type { PageData } from "./$types";
 
@@ -10,12 +11,9 @@
     let about = $derived(data.about);
 </script>
 
-<svelte:head>
-    <title>Austin Gause | About</title>
-    <meta
-        name="description"
-        content={about.title} />
-</svelte:head>
+<Seo
+    title="Austin Gause | About"
+    description={about.title} />
 
 <section>
     <ProseArticle>

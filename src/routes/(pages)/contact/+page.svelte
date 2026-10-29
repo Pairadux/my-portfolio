@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Seo from "#lib/util/Seo.svelte";
     import Divider from "#lib/util/Divider.svelte";
     import ProseArticle from "#lib/util/ProseArticle.svelte";
 
@@ -6,12 +7,9 @@
     const inputClass = "mt-2 block w-full rounded-md bg-white px-3 py-2 text-base text-black outline-1 -outline-offset-1 outline-gray-300 outline-solid placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-blue-500 focus:outline-solid dark:bg-black dark:text-white dark:outline-gray-600 dark:placeholder:text-gray-600";
 </script>
 
-<svelte:head>
-    <title>Austin Gause | Contact</title>
-    <meta
-        name="description"
-        content="Get in touch with Austin Gause." />
-</svelte:head>
+<Seo
+    title="Austin Gause | Contact"
+    description="Get in touch with Austin Gause." />
 
 <section>
     <ProseArticle>

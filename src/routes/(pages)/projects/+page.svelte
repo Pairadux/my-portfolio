@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Seo from "#lib/util/Seo.svelte";
     import ProjectItem from "#lib/util/ProjectItem.svelte";
     import SectionHeader from "#lib/util/SectionHeader.svelte";
     import type { PageData } from "./$types";
@@ -11,12 +12,9 @@
     let projects = $derived(data.projects);
 </script>
 
-<svelte:head>
-    <title>Austin Gause | Projects</title>
-    <meta
-        name="description"
-        content="A comprehensive list of all my projects." />
-</svelte:head>
+<Seo
+    title="Austin Gause | Projects"
+    description="A comprehensive list of all my projects." />
 
 <!-- PORTFOLIO SECTION -->
 <section class="m-auto flex flex-col items-center">

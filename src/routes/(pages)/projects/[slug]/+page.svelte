@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Seo from "#lib/util/Seo.svelte";
     import Divider from "#lib/util/Divider.svelte";
     import Icon from "#lib/util/Icon.svelte";
     import ProseArticle from "#lib/util/ProseArticle.svelte";
@@ -12,12 +13,10 @@
     let project = $derived(data.project);
 </script>
 
-<svelte:head>
-    <title>Austin Gause | {project.title}</title>
-    <meta
-        name="description"
-        content={project.description} />
-</svelte:head>
+<Seo
+    title="Austin Gause | {project.title}"
+    description={project.description}
+    image={project.image.img.src} />
 
 <section>
     <ProseArticle>

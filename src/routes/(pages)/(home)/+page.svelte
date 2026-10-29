@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Seo from "#lib/util/Seo.svelte";
     import Divider from "#lib/util/Divider.svelte";
     import Hero from "./components/Hero.svelte";
     import SkillsContainer from "./components/SkillsContainer.svelte";
@@ -12,12 +13,9 @@
     let { data }: Props = $props();
 </script>
 
-<svelte:head>
-    <title>Austin Gause | Full Stack Developer & UNIX Enthusiast</title>
-    <meta
-        name="description"
-        content="Full stack web developer with a B.S. in Computer Science, passionate about UNIX/Linux systems, systems programming, and command line tooling." />
-</svelte:head>
+<Seo
+    title="Austin Gause | Full Stack Developer & UNIX Enthusiast"
+    description="Full stack web developer with a B.S. in Computer Science, passionate about UNIX/Linux systems, systems programming, and command line tooling." />
 
 <div class="flex w-full flex-col items-center">
     <Hero home={data.home} />

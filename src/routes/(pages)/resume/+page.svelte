@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Seo from "#lib/util/Seo.svelte";
     import Divider from "#lib/util/Divider.svelte";
     import ProseArticle from "#lib/util/ProseArticle.svelte";
     import type { PageData } from "./$types";
@@ -13,12 +14,9 @@
     const row = "flex flex-wrap justify-between gap-x-4";
 </script>
 
-<svelte:head>
-    <title>Austin Gause | Resume</title>
-    <meta
-        name="description"
-        content={resume.summary.substring(0, 160)} />
-</svelte:head>
+<Seo
+    title="Austin Gause | Resume"
+    description={resume.summary.substring(0, 160)} />
 
 <section class="flex">
     <ProseArticle>

@@ -1,4 +1,5 @@
 <script lang="ts">
+    import Seo from "#lib/util/Seo.svelte";
     import ProseArticle from "#lib/util/ProseArticle.svelte";
     import Haiku from "./components/Haiku.svelte";
     import type { PageData } from "./$types";
@@ -10,9 +11,7 @@
     let { data }: Props = $props();
 </script>
 
-<svelte:head>
-    <title>Austin Gause | Haikus</title>
-</svelte:head>
+<Seo title="Austin Gause | Haikus" />
 
 <section class="flex">
     <ProseArticle>
